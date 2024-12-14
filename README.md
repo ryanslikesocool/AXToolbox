@@ -6,7 +6,7 @@ Add the following entry to your package dependencies...
 ```swift
 .package(url: "https://github.com/ryanslikesocool/SwiftyAccessibility.git", from: "0.0.1"),
 ```
-...and as a dependency to your targets.
+...and your target dependencies.
 ```swift
 .target(
 	name: "MyTarget",
