@@ -1,5 +1,5 @@
 # Swifty Accessibility
-Extensions and conveniences to make macOS accessibility APIs Swiftier™.
+Extensions and conveniences to make macOS accessibility APIs Swiftier.
 
 ## Installation (Swift Package Manager)
 Add the following entry to your package dependencies...
