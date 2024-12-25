@@ -1,10 +1,11 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXMinimizeButtonAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXMinimizeButtonAttribute
+import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXMinimizeButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxminimizebuttonattribute)\.
 	struct MinimizeButtonKey: AXAttributeKey {
-		public typealias Value = Any
+		public typealias Value = AXUIElement
 
 		public static var attributeKey: String { kAXMinimizeButtonAttribute }
 

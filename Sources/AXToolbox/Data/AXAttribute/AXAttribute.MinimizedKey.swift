@@ -1,11 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXMinimizedAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXMinimizedAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXMinimizedAttribute`](https://developer.apple.com/documentation/applicationservices/kaxminimizedattribute)\.
 	struct MinimizedKey: AXAttributeKey {
-		// Maybe `Bool`.
-		public typealias Value = Any
+		public typealias Value = Bool
 
 		public static var attributeKey: String { kAXMinimizedAttribute }
 

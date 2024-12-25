@@ -9,8 +9,8 @@ public extension AXAttributeModifier {
 			self.transform = transform
 		}
 
-		public func process(_ value: Input) -> [SegmentOfResult.Element] {
-			value.flatMap(transform)
+		public func process(_ input: Input) -> [SegmentOfResult.Element] {
+			input.flatMap(transform)
 		}
 	}
 }

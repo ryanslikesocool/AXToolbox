@@ -21,6 +21,13 @@ public extension AXUIElement {
 		AXUIElementCreateApplication(pid)
 	}
 
+	/// Creates and returns the top-level accessibility object for the given running application.
+	/// - Parameter runningApplication: The running application.
+	/// - Returns: The `AXUIElement` representing the top-level accessibility object for the running application.
+	static func application(_ runningApplication: NSRunningApplication) -> AXUIElement {
+		AXUIElement.application(runningApplication.processIdentifier)
+	}
+
 	/// Creates and returns the top-level accessibility objects applications with the specified bundle identifier.
 	/// - Parameter bundleIdentifier: The bundle identifier of an application.
 	/// - Returns: The `AXUIElement`s representing the top-level accessibility objects for applications with the specified bundle identifier.
@@ -28,9 +35,7 @@ public extension AXUIElement {
 		NSRunningApplication
 			.runningApplications(withBundleIdentifier: bundleIdentifier)
 			.lazy
-			.map { application in
-				AXUIElement.application(application.processIdentifier)
-			}
+			.map(application(_:))
 	}
 
 	// MARK: - AXUIElementCopyAttributeValue
@@ -114,7 +119,7 @@ public extension AXUIElement {
 	/// Returns the values of multiple attributes in the accessibility object.
 	/// - Parameters:
 	///   - attributeNames: An array of attribute names.
-	///   - options: A value that tells `AXUIElementCopyMultipleAttributeValues` how to handle errors.
+	///   - options: A value that tells the function how to handle errors.
 	/// - Returns: An array in which each position contains the value of the attribute that is in the corresponding position in the passed-in attributes array.
 	/// If `options.isEmpty`, the array can contain an
 	/// [`AXValue`](https://developer.apple.com/documentation/applicationservices/axvalue)
@@ -137,8 +142,8 @@ public extension AXUIElement {
 	/// Returns the values of multiple attributes in the accessibility object.
 	/// - Parameters:
 	///   - attributeNames: An array of attribute names.
-	///   - options: A value that tells `AXUIElementCopyMultipleAttributeValues` how to handle errors.
-	/// - Returns: An array in which each position contains the value of the attribute that is in the corresponding position in the passed-in attributes array.
+	///   - options: A value that tells the function how to handle errors.
+	/// - Returns: An array in which each position contains the value of the attribute that is in the corresponding position in the given `attributeNames`.
 	/// If `options.isEmpty`, the array can contain an
 	/// [`AXValue`](https://developer.apple.com/documentation/applicationservices/axvalue)
 	/// of type
@@ -149,21 +154,11 @@ public extension AXUIElement {
 		try values(forAttributes: attributeNames as CFArray, options: options)
 	}
 
-	// overkill?
-	//	func values(forAttributes attributeNames: some Sequence<CFString>, options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
-	//		try values(forAttributes: Array(attributeNames), options: options)
-	//	}
-
-	// overkill?
-	//	func values(forAttributes firstAttributeName: CFString, _ secondAttributeName: CFString, _ otherAttributeNames: CFString..., options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
-	//		try values(forAttributes: [firstAttributeName, secondAttributeName] + Array(otherAttributeNames), options: options)
-	//	}
-
 	/// Returns the values of multiple attributes in the accessibility object.
 	/// - Parameters:
 	///   - attributeNames: An array of attribute names.
-	///   - options: A value that tells `AXUIElementCopyMultipleAttributeValues` how to handle errors.
-	/// - Returns: An array in which each position contains the value of the attribute that is in the corresponding position in the passed-in attributes array.
+	///   - options: A value that tells the function how to handle errors.
+	/// - Returns: An array in which each position contains the value of the attribute that is in the corresponding position in the given `attributeNames`.
 	/// If `options.isEmpty`, the array can contain an
 	/// [`AXValue`](https://developer.apple.com/documentation/applicationservices/axvalue)
 	/// of type
@@ -174,15 +169,20 @@ public extension AXUIElement {
 		try values(forAttributes: attributeNames.map { attributeName in attributeName as CFString }, options: options)
 	}
 
-	// overkill?
-	//	func values(forAttributes attributeNames: some Sequence<String>, options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
-	//		try values(forAttributes: Array(attributeNames), options: options)
-	//	}
-
-	// overkill?
-	//	func values(forAttributes firstAttributeName: String, _ secondAttributeName: String, _ otherAttributeNames: String..., options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
-	//		try values(forAttributes: [firstAttributeName, secondAttributeName] + Array(otherAttributeNames), options: options)
-	//	}
+	/// Returns the values of multiple attributes in the accessibility object.
+	/// - Parameters:
+	///   - attributeKeys: An array of attribute keys.
+	///   - options: A value that tells the function how to handle errors.
+	/// - Returns: An array in which each position contains the value of the attribute that is in the corresponding position in the given `attributeKeys`.
+	/// If `options.isEmpty`, the array can contain an
+	/// [`AXValue`](https://developer.apple.com/documentation/applicationservices/axvalue)
+	/// of type
+	/// [`AXValueType.axError`](https://developer.apple.com/documentation/applicationservices/axvaluetype/axerror)
+	/// in the corresponding position.
+	/// If `options.contains(.stopOnError)`, this function will return immediately when it gets an error.
+	func values(forAttributes attributeKeys: [any AXAttributeKey.Type], options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
+		try values(forAttributes: attributeKeys.map { attributeKey in attributeKey.attributeKey }, options: options)
+	}
 
 	// MARK: - AXUIElementGetAttributeValueCount
 

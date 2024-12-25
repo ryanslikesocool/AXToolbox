@@ -1,9 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXVisibleCharacterRangeAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXVisibleCharacterRangeAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXVisibleCharacterRangeAttribute`](https://developer.apple.com/documentation/applicationservices/kaxvisiblecharacterrangeattribute)\.
 	struct VisibleCharacterRangeKey: AXAttributeKey {
+		// Probably `AXValue` with underlying `CFRange`.
 		public typealias Value = Any
 
 		public static var attributeKey: String { kAXVisibleCharacterRangeAttribute }

@@ -1,4 +1,4 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXMaxValueAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXMaxValueAttribute
 
 public extension AXAttribute {
 	/// The attribute key for

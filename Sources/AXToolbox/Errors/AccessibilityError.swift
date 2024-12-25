@@ -1,7 +1,7 @@
-import ApplicationServices
+import enum ApplicationServices.HIServices.AXError
 
 /// An object that wraps
-/// ['AXError'](https://developer.apple.com/documentation/applicationservices/axerror)\,
+/// [`AXError`](https://developer.apple.com/documentation/applicationservices/axerror)\,
 /// allowing it to be used as an
 /// [`Error`](https://developer.apple.com/documentation/swift/error)\.
 public struct AccessibilityError: Swift.Error, RawRepresentable {
@@ -44,7 +44,7 @@ public extension AccessibilityError {
 	/// ['AXError'](https://developer.apple.com/documentation/applicationservices/axerror)
 	/// using ``init(_:)`` and immediately throw if the argument is not
 	/// [`success`](https://developer.apple.com/documentation/applicationservices/axerror/success)\.
-	static func test(_ rawValue: AXError) throws(AccessibilityError) {
+	static func test(_ rawValue: AXError) throws(Self) {
 		if let error = Self(rawValue: rawValue) {
 			throw error
 		}

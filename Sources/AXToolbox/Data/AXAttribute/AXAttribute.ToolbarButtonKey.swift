@@ -1,10 +1,11 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXToolbarButtonAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXToolbarButtonAttribute
+import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXToolbarButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxtoolbarbuttonattribute)\.
 	struct ToolbarButtonKey: AXAttributeKey {
-		public typealias Value = Any
+		public typealias Value = AXUIElement
 
 		public static var attributeKey: String { kAXToolbarButtonAttribute }
 

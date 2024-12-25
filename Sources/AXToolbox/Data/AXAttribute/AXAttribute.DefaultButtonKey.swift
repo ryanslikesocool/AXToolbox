@@ -1,10 +1,11 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXDefaultButtonAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXDefaultButtonAttribute
+import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXDefaultButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxdefaultbuttonattribute)\.
 	struct DefaultButtonKey: AXAttributeKey {
-		public typealias Value = Any
+		public typealias Value = AXUIElement
 
 		public static var attributeKey: String { kAXDefaultButtonAttribute }
 

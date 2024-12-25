@@ -18,8 +18,8 @@ extension ModifiedContent: AXAttributeProtocol where
 	typealias Input = Upstream.Input
 	typealias Output = Downstream.Output
 
-	func process(_ value: Input) -> Output {
-		let intermediate = upstream.process(value)
+	func process(_ input: Input) -> Output {
+		let intermediate = upstream.process(input)
 		return downstream.process(intermediate)
 	}
 }

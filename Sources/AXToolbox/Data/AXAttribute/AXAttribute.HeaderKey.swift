@@ -1,10 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXHeaderAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXHeaderAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXHeaderAttribute`](https://developer.apple.com/documentation/applicationservices/kaxheaderattribute)\.
 	struct HeaderKey: AXAttributeKey {
-		// Probably `String`.
+		// Probably `AXUIElement`.
 		public typealias Value = Any
 
 		public static var attributeKey: String { kAXHeaderAttribute }

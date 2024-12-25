@@ -1,10 +1,11 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXSharedTextUIElementsAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXSharedTextUIElementsAttribute
+import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXSharedTextUIElementsAttribute`](https://developer.apple.com/documentation/applicationservices/kaxsharedtextuielementsattribute)\.
 	struct SharedTextUIElementsKey: AXAttributeKey {
-		public typealias Value = Any
+		public typealias Value = [AXUIElement]
 
 		public static var attributeKey: String { kAXSharedTextUIElementsAttribute }
 

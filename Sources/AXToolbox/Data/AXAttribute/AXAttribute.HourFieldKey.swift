@@ -1,9 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXHourFieldAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXHourFieldAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXHourFieldAttribute`](https://developer.apple.com/documentation/applicationservices/kaxhourfieldattribute)\.
 	struct HourFieldKey: AXAttributeKey {
+		// Probably `AXUIElement`.
 		public typealias Value = Any
 
 		public static var attributeKey: String { kAXHourFieldAttribute }

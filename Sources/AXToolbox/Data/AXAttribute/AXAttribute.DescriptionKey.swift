@@ -1,11 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXDescriptionAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXDescriptionAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXDescriptionAttribute`](https://developer.apple.com/documentation/applicationservices/kaxdescriptionattribute)\.
 	struct DescriptionKey: AXAttributeKey {
-		// Probably `String`.
-		public typealias Value = Any
+		public typealias Value = String
 
 		public static var attributeKey: String { kAXDescriptionAttribute }
 

@@ -1,9 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXIncrementorAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXIncrementorAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXIncrementorAttribute`](https://developer.apple.com/documentation/applicationservices/kaxincrementorattribute)\.
 	struct IncrementorKey: AXAttributeKey {
+		// Probably `AXUIElement`.
 		public typealias Value = Any
 
 		public static var attributeKey: String { kAXIncrementorAttribute }

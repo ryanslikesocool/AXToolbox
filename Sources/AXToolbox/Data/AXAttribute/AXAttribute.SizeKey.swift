@@ -1,4 +1,3 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXSizeAttribute
 import ApplicationServices.HIServices
 import struct CoreGraphics.CGPoint
 
@@ -13,8 +12,14 @@ public extension AXAttribute {
 		public init() { }
 
 		public func process(_ input: Input) -> Output {
-			(try? input.value(forAttribute: Self.attributeKey) as! AXValue)?
-				.value(ofType: CGSize.self)
+			guard let attributeValue = try? input.value(forAttribute: Self.attributeKey) else {
+				return nil
+			}
+			
+			assert(CFGetTypeID(attributeValue) == AXValueGetTypeID())
+
+			let axValue = attributeValue as! AXValue
+			return axValue.value(ofType: CGSize.self)
 		}
 	}
 }

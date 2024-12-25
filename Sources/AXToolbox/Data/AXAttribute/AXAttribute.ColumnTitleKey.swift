@@ -1,10 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXColumnTitleAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXColumnTitleAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXColumnTitleAttribute`](https://developer.apple.com/documentation/applicationservices/kaxcolumntitleattribute)\.
 	struct ColumnTitleKey: AXAttributeKey {
-		// Probably `String`.
+		// Maybe `AXUIElement`.
 		public typealias Value = Any
 
 		public static var attributeKey: String { kAXColumnTitleAttribute }

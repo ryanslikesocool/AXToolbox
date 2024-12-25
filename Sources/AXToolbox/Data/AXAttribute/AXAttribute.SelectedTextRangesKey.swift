@@ -1,9 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXSelectedTextRangesAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXSelectedTextRangesAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXSelectedTextRangesAttribute`](https://developer.apple.com/documentation/applicationservices/kaxselectedtextrangesattribute)\.
 	struct SelectedTextRangesKey: AXAttributeKey {
+		// Probably `CFArray` of `AXValue` with underlying `CFRange`.
 		public typealias Value = Any
 
 		public static var attributeKey: String { kAXSelectedTextRangesAttribute }

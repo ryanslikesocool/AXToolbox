@@ -1,4 +1,4 @@
-import ApplicationServices
+import ApplicationServices.HIServices
 
 public extension AXValue {
 	// MARK: - AXValueGetType

@@ -1,10 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXSelectedTextAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXSelectedTextAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXSelectedTextAttribute`](https://developer.apple.com/documentation/applicationservices/kaxselectedtextattribute)\.
 	struct SelectedTextKey: AXAttributeKey {
-		// Maybe `String`.
+		// Probably `String`.
 		public typealias Value = Any
 
 		public static var attributeKey: String { kAXSelectedTextAttribute }

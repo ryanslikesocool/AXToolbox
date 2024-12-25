@@ -1,11 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXFocusedAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXFocusedAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXFocusedAttribute`](https://developer.apple.com/documentation/applicationservices/kaxfocusedattribute)\.
 	struct FocusedKey: AXAttributeKey {
-		// Probably `Bool`.
-		public typealias Value = Any
+		public typealias Value = Bool
 
 		public static var attributeKey: String { kAXFocusedAttribute }
 

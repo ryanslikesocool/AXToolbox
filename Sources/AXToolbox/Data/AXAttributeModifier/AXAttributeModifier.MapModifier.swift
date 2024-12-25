@@ -6,8 +6,8 @@ public extension AXAttributeModifier {
 			self.transform = transform
 		}
 
-		public func process(_ value: Input) -> Output {
-			transform(value)
+		public func process(_ input: Input) -> Output {
+			transform(input)
 		}
 	}
 }

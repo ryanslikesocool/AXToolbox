@@ -1,10 +1,11 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXTopLevelUIElementAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXTopLevelUIElementAttribute
+import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXTopLevelUIElementAttribute`](https://developer.apple.com/documentation/applicationservices/kaxtopleveluielementattribute)\.
 	struct TopLevelUIElementKey: AXAttributeKey {
-		public typealias Value = Any
+		public typealias Value = AXUIElement
 
 		public static var attributeKey: String { kAXTopLevelUIElementAttribute }
 

@@ -1,10 +1,11 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXCloseButtonAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXCloseButtonAttribute
+import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXCloseButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxclosebuttonattribute)\.
 	struct CloseButtonKey: AXAttributeKey {
-		public typealias Value = Any
+		public typealias Value = AXUIElement
 
 		public static var attributeKey: String { kAXCloseButtonAttribute }
 

@@ -1,9 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXVisibleColumnsAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXVisibleColumnsAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXVisibleColumnsAttribute`](https://developer.apple.com/documentation/applicationservices/kaxvisiblecolumnsattribute)\.
 	struct VisibleColumnsKey: AXAttributeKey {
+		// Maybe `CFArray` of `AXUIElement`.
 		public typealias Value = Any
 
 		public static var attributeKey: String { kAXVisibleColumnsAttribute }

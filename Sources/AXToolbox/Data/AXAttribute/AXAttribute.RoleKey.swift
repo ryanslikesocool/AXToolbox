@@ -1,6 +1,6 @@
-private import class CoreFoundation.CFString
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXRoleAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXRoleAttribute
 import class ApplicationServices.HIServices.AXUIElement
+import class CoreFoundation.CFString
 
 public extension AXAttribute {
 	/// The attribute key for
@@ -12,8 +12,8 @@ public extension AXAttribute {
 
 		public init() { }
 
-		public func process(_ value: Input) -> Value? {
-			guard let rawValue = try? value.value(forAttribute: Self.attributeKey) as? String else {
+		public func process(_ input: Input) -> Value? {
+			guard let rawValue = try? input.value(forAttribute: Self.attributeKey) as? String else {
 				return nil
 			}
 			return Value(rawValue: rawValue)

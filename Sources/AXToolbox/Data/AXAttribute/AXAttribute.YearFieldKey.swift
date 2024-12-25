@@ -1,9 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXYearFieldAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXYearFieldAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXYearFieldAttribute`](https://developer.apple.com/documentation/applicationservices/kaxyearfieldattribute)\.
 	struct YearFieldKey: AXAttributeKey {
+		// Probably `AXUIElement`.
 		public typealias Value = Any
 
 		public static var attributeKey: String { kAXYearFieldAttribute }

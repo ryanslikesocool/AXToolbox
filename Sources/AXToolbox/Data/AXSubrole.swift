@@ -1,4 +1,4 @@
-private import ApplicationServices.HIServices.AXRoleConstants
+import ApplicationServices.HIServices.AXRoleConstants
 
 /// A wrapper for subrole names in
 /// [AXRoleConstants.h](https://developer.apple.com/documentation/applicationservices/axroleconstants_h)\.

@@ -1,11 +1,11 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXURLAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXURLAttribute
+import struct Foundation.URL
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXURLAttribute`](https://developer.apple.com/documentation/applicationservices/kaxurlattribute)\.
 	struct URLKey: AXAttributeKey {
-		// Probably `URL` or `String`.
-		public typealias Value = Any
+		public typealias Value = URL
 
 		public static var attributeKey: String { kAXURLAttribute }
 

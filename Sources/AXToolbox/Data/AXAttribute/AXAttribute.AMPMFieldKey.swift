@@ -1,9 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXAMPMFieldAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXAMPMFieldAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXAMPMFieldAttribute`](https://developer.apple.com/documentation/applicationservices/kaxampmfieldattribute)\.
 	struct AMPMFieldKey: AXAttributeKey {
+		// Probably `AXUIElement`.
 		public typealias Value = Any
 
 		public static var attributeKey: String { kAXAMPMFieldAttribute }

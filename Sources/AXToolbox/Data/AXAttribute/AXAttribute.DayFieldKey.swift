@@ -1,9 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXDayFieldAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXDayFieldAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXDayFieldAttribute`](https://developer.apple.com/documentation/applicationservices/kaxdayfieldattribute)\.
 	struct DayFieldKey: AXAttributeKey {
+		// Probably `AXUIElement`.
 		public typealias Value = Any
 
 		public static var attributeKey: String { kAXDayFieldAttribute }

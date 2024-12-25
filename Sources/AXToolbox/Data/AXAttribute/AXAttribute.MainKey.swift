@@ -1,10 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXMainAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXMainAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXMainAttribute`](https://developer.apple.com/documentation/applicationservices/kaxmainattribute)\.
 	struct MainKey: AXAttributeKey {
-		public typealias Value = Any
+		public typealias Value = Bool
 
 		public static var attributeKey: String { kAXMainAttribute }
 

@@ -1,10 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXHelpAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXHelpAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXHelpAttribute`](https://developer.apple.com/documentation/applicationservices/kaxhelpattribute)\.
 	struct HelpKey: AXAttributeKey {
-		public typealias Value = Any
+		public typealias Value = String
 
 		public static var attributeKey: String { kAXHelpAttribute }
 

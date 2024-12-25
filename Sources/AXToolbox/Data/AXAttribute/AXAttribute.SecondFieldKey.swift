@@ -1,9 +1,10 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXSecondFieldAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXSecondFieldAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXSecondFieldAttribute`](https://developer.apple.com/documentation/applicationservices/kaxsecondfieldattribute)\.
 	struct SecondFieldKey: AXAttributeKey {
+		// Probably `AXUIElement`.
 		public typealias Value = Any
 
 		public static var attributeKey: String { kAXSecondFieldAttribute }

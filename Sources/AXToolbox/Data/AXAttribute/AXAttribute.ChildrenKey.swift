@@ -1,11 +1,11 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXChildrenAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXChildrenAttribute
+import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttribute {
 	/// The attribute key for
 	/// [`kAXChildrenAttribute`](https://developer.apple.com/documentation/applicationservices/kaxchildrenattribute)\.
 	struct ChildrenKey: AXAttributeKey {
-		// Probably `CFArray` of `AXUIElement`.
-		public typealias Value = Any
+		public typealias Value = [AXUIElement]
 
 		public static var attributeKey: String { kAXChildrenAttribute }
 

@@ -1,4 +1,4 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXRoleDescriptionAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXRoleDescriptionAttribute
 
 public extension AXAttribute {
 	/// The attribute key for

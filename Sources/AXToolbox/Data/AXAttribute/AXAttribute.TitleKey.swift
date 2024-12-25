@@ -1,4 +1,4 @@
-private import let ApplicationServices.HIServices.AXAttributeConstants.kAXTitleAttribute
+import let ApplicationServices.HIServices.AXAttributeConstants.kAXTitleAttribute
 
 public extension AXAttribute {
 	/// The attribute key for
