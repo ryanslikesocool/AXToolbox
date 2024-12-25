@@ -3,15 +3,15 @@
 import PackageDescription
 
 let package = Package(
-	name: "SwiftyAccessibility",
+	name: "AXToolbox",
 	defaultLocalization: "en",
 	platforms: [
 		.macOS(.v10_13),
 	],
 	products: [
-		.library(name: "SwiftyAccessibility", targets: ["SwiftyAccessibility"]),
+		.library(name: "AXToolbox", targets: ["AXToolbox"]),
 	],
 	targets: [
-		.target(name: "SwiftyAccessibility"),
+		.target(name: "AXToolbox"),
 	]
 )
