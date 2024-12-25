@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.CancelButtonKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/CancelButtonKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/CancelButtonKey``.
 	static var cancelButton: Self {
 		Self()
 	}

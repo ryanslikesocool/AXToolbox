@@ -1,6 +1,6 @@
 import ApplicationServices.HIServices.AXRoleConstants
 
-/// A wrapper for role names in
+/// A wrapper for roles defined in
 /// [AXRoleConstants.h](https://developer.apple.com/documentation/applicationservices/axroleconstants_h)\.
 @frozen
 public struct AXRole: RawRepresentable {

@@ -17,7 +17,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.FrontmostKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/FrontmostKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/FrontmostKey``.
 	static var frontmost: Self {
 		Self()
 	}

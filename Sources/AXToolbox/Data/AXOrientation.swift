@@ -24,17 +24,17 @@ public enum AXOrientation {
 extension AXOrientation: RawRepresentable {
 	public typealias RawValue = String
 
-	public init?(rawValue: RawValue) {
+	public init(rawValue: RawValue) {
 		// TODO: Optimize
 		// - Is the Swift compiler already smart enough to optimize this away?
 		// - Should we store this as a `static let initializerLookupTable: [String : Self]`?
 		// - Should `switch` cases be `case Self.<case>.rawValue:` for safety?
 
-		switch rawValue {
-			case kAXHorizontalOrientationValue: self = .horizontal
-			case kAXVerticalOrientationValue: self = .vertical
-			case kAXUnknownOrientationValue: self = .unknown
-			default: return nil // TODO: Should the `default` case be `.unknown`?
+		self = switch rawValue {
+			case kAXHorizontalOrientationValue: .horizontal
+			case kAXVerticalOrientationValue: .vertical
+			case kAXUnknownOrientationValue: .unknown
+			default: .unknown
 		}
 	}
 
@@ -68,7 +68,7 @@ extension AXOrientation: Hashable { }
 extension AXOrientation: Codable {
 	public init(from decoder: any Decoder) throws {
 		let container = try decoder.singleValueContainer()
-		self = try Self(rawValue: container.decode(RawValue.self)) ?? .unknown
+		self = try Self(rawValue: container.decode(RawValue.self))
 	}
 
 	public func encode(to encoder: any Encoder) throws {
@@ -76,3 +76,21 @@ extension AXOrientation: Codable {
 		try container.encode(rawValue)
 	}
 }
+
+// MARK: - CustomStringConvertible
+
+//extension AXOrientation: CustomStringConvertible {
+//	public var description: String {
+//		// TODO: Optimize
+//		// - Is the Swift compiler already smart enough to optimize this away?
+//		// - Should we store this as a `static let customStringConvertibleLookupTable: [Self : String]`?
+//
+//		let suffix: String = switch self {
+//			case .horizontal: "horizontal"
+//			case .vertical: "vertical"
+//			case .unknown: "unknown"
+//		}
+//
+//		return "\(Self.self).\(suffix)"
+//	}
+//}

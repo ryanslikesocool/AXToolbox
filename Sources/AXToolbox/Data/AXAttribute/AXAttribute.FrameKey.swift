@@ -17,10 +17,11 @@ public extension AXAttribute {
 
 		public init() { }
 
-		public func process(_ input: Input) -> Output {
-			guard let axValues = try? input.values(forAttributes: Self.attributeNames, options: [.stopOnError]) else {
-				return nil
-			}
+		public func process(_ input: Input) throws -> Output {
+			// TODO: Validate performance
+			// Is the current implementation faster than retrieving each attribute individually?
+
+			let axValues = try input.values(forAttributes: Self.attributeNames, options: [.stopOnError])
 
 			var origin = CGPoint.zero
 			var size = CGSize.zero
@@ -55,7 +56,7 @@ private extension AXAttribute.FrameKey {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.FrameKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/FrameKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/FrameKey``.
 	static var frame: Self {
 		Self()
 	}

@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.ParentKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/ParentKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/ParentKey``.
 	static var parent: Self {
 		Self()
 	}

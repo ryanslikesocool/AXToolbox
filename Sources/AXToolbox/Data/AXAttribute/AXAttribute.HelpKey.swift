@@ -17,7 +17,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.HelpKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/HelpKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/HelpKey``.
 	static var help: Self {
 		Self()
 	}

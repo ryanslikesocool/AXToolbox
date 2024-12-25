@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.ZoomButtonKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/ZoomButtonKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/ZoomButtonKey``.
 	static var zoomButton: Self {
 		Self()
 	}

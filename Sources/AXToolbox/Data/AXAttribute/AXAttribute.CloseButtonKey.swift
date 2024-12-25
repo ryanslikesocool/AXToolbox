@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.CloseButtonKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/CloseButtonKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/CloseButtonKey``.
 	static var closeButton: Self {
 		Self()
 	}

@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.SelectedTextRangesKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/SelectedTextRangesKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/SelectedTextRangesKey``.
 	static var selectedTextRanges: Self {
 		Self()
 	}

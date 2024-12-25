@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.WindowKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/WindowKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/WindowKey``.
 	static var window: Self {
 		Self()
 	}

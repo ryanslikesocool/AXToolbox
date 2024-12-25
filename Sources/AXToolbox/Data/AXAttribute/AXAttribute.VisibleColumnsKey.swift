@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.VisibleColumnsKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/VisibleColumnsKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/VisibleColumnsKey``.
 	static var visibleColumns: Self {
 		Self()
 	}

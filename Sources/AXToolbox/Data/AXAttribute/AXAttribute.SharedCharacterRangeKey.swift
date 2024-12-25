@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.SharedCharacterRangeKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/SharedCharacterRangeKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/SharedCharacterRangeKey``.
 	static var sharedCharacterRange: Self {
 		Self()
 	}

@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.URLKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/URLKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/URLKey``.
 	static var url: Self {
 		Self()
 	}

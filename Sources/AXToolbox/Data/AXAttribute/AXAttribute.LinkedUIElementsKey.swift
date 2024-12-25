@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.LinkedUIElementsKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/LinkedUIElementsKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/LinkedUIElementsKey``.
 	static var linkedUIElements: Self {
 		Self()
 	}

@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.VisibleCharacterRangeKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/VisibleCharacterRangeKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/VisibleCharacterRangeKey``.
 	static var visibleCharacterRange: Self {
 		Self()
 	}

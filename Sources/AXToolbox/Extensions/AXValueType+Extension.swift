@@ -14,6 +14,18 @@ public extension AXValueType {
 }
 
 internal extension AXValueType {
+	var valueMetatype: Any.Type? {
+		switch self {
+			case .cgPoint: CGPoint.self
+			case .cgSize: CGSize.self
+			case .cgRect: CGRect.self
+			case .cfRange: CFRange.self
+			case .axError: AXError.self
+			case .illegal: nil
+			default: nil
+		}
+	}
+
 	var defaultValue: Any? {
 		switch self {
 			case .cgPoint: CGPoint.zero
@@ -21,6 +33,7 @@ internal extension AXValueType {
 			case .cgRect: CGRect.zero
 			case .cfRange: CFRange()
 			case .axError: AXError.success
+			case .illegal: nil
 			default: nil
 		}
 	}

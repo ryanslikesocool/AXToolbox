@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.DefaultButtonKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/DefaultButtonKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/DefaultButtonKey``.
 	static var defaultButton: Self {
 		Self()
 	}

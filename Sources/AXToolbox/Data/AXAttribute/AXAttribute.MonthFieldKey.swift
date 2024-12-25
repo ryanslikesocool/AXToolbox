@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.MonthFieldKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/MonthFieldKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/MonthFieldKey``.
 	static var monthField: Self {
 		Self()
 	}

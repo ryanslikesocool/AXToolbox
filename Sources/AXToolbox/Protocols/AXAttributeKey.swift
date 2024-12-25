@@ -4,7 +4,7 @@ import class ApplicationServices.HIServices.AXUIElement
 /// [`AXUIElement`](https://developer.apple.com/documentation/applicationservices/axuielement)\.
 public protocol AXAttributeKey: AXAttributeProtocol where
 	Input == AXUIElement,
-	Output == Value?
+	Output == Value
 {
 	/// The expected type of the value returned by
 	/// [`value(forAttribute:)`](https://developer.apple.com/documentation/foundation/nsmetadataitem/1411721-value)\.
@@ -20,7 +20,11 @@ public protocol AXAttributeKey: AXAttributeProtocol where
 // MARK: - Default Implementation
 
 public extension AXAttributeKey {
-	func process(_ input: Input) -> Value? {
-		try? input.value(forAttribute: Self.attributeKey) as? Value
+	func process(_ input: Input) throws -> Output {
+		let originalValue = try input.value(forAttribute: Self.attributeKey)
+		guard let castValue = originalValue as? Output else {
+			throw AXAttributeError.castFailed(input: type(of: originalValue), output: Output.self)
+		}
+		return castValue
 	}
 }

@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.MenuBarKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/MenuBarKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/MenuBarKey``.
 	static var menuBar: Self {
 		Self()
 	}

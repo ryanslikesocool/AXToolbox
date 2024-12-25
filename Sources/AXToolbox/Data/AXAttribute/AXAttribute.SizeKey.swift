@@ -11,15 +11,12 @@ public extension AXAttribute {
 
 		public init() { }
 
-		public func process(_ input: Input) -> Output {
-			guard let attributeValue = try? input.value(forAttribute: Self.attributeKey) else {
-				return nil
-			}
-			
+		public func process(_ input: Input) throws -> Output {
+			let attributeValue = try input.value(forAttribute: Self.attributeKey)
 			assert(CFGetTypeID(attributeValue) == AXValueGetTypeID())
 
 			let axValue = attributeValue as! AXValue
-			return axValue.value(ofType: CGSize.self)
+			return try axValue.value(ofType: CGSize.self)
 		}
 	}
 }
@@ -29,7 +26,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.SizeKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/SizeKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/SizeKey``.
 	static var size: Self {
 		Self()
 	}

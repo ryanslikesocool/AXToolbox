@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.AMPMFieldKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/AMPMFieldKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/AMPMFieldKey``.
 	static var amPMField: Self {
 		Self()
 	}

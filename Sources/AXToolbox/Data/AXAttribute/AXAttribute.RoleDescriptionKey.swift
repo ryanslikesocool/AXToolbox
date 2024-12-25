@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.RoleDescriptionKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/RoleDescriptionKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/RoleDescriptionKey``.
 	static var roleDescription: Self {
 		Self()
 	}

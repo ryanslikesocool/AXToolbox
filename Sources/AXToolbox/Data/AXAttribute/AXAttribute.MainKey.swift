@@ -17,7 +17,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.MainKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/MainKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/MainKey``.
 	static var main: Self {
 		Self()
 	}

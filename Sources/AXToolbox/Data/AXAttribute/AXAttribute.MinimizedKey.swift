@@ -17,7 +17,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.MinimizedKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/MinimizedKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/MinimizedKey``.
 	static var minimized: Self {
 		Self()
 	}

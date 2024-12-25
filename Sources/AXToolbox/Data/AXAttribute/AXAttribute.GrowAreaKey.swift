@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.GrowAreaKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/GrowAreaKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/GrowAreaKey``.
 	static var growArea: Self {
 		Self()
 	}

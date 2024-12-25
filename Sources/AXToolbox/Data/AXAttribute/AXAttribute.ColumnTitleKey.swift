@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.ColumnTitleKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/ColumnTitleKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/ColumnTitleKey``.
 	static var columnTitle: Self {
 		Self()
 	}

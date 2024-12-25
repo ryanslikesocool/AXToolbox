@@ -17,7 +17,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.ModalKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/ModalKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/ModalKey``.
 	static var modal: Self {
 		Self()
 	}

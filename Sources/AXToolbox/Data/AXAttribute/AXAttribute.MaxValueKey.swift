@@ -17,7 +17,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.MaxValueKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/MaxValueKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/MaxValueKey``.
 	static var maxValue: Self {
 		Self()
 	}

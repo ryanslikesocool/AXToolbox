@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.TopLevelUIElementKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/TopLevelUIElementKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/TopLevelUIElementKey``.
 	static var topLevelUIElement: Self {
 		Self()
 	}

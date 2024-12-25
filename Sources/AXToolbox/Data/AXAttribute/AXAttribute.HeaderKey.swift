@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.HeaderKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/HeaderKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/HeaderKey``.
 	static var header: Self {
 		Self()
 	}

@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.HourFieldKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/HourFieldKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/HourFieldKey``.
 	static var hourField: Self {
 		Self()
 	}

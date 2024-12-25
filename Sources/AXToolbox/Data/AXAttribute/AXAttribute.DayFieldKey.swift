@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.DayFieldKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/DayFieldKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/DayFieldKey``.
 	static var dayField: Self {
 		Self()
 	}

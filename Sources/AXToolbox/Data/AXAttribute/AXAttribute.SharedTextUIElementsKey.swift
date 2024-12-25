@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.SharedTextUIElementsKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/SharedTextUIElementsKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/SharedTextUIElementsKey``.
 	static var sharedTextUIElements: Self {
 		Self()
 	}

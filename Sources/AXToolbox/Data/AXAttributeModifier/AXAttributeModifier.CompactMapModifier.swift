@@ -2,14 +2,14 @@ public extension AXAttributeModifier {
 	struct CompactMapModifier<Input, OutputElement>: AXAttributeProtocol where
 		Input: Sequence
 	{
-		private let transform: (Input.Element) -> OutputElement?
+		private let transform: (Input.Element) throws -> OutputElement?
 
-		public init(_ transform: @escaping (Input.Element) -> OutputElement?) {
+		public init(_ transform: @escaping (Input.Element) throws -> OutputElement?) {
 			self.transform = transform
 		}
 
-		public func process(_ input: Input) -> [OutputElement] {
-			input.compactMap(transform)
+		public func process(_ input: Input) throws -> [OutputElement] {
+			try input.compactMap(transform)
 		}
 	}
 }
@@ -19,7 +19,7 @@ public extension AXAttributeModifier {
 public extension AXAttributeProtocol {
 	/// Perform a `compactMap` operation on an attribute value.
 	func compactMap<OutputElement>(
-		_ transform: @escaping (Self.Output.Element) -> OutputElement?
+		_ transform: @escaping (Self.Output.Element) throws -> OutputElement?
 	) -> some AXAttributeProtocol<Self.Input, [OutputElement]> where
 		Self.Output: Sequence
 	{

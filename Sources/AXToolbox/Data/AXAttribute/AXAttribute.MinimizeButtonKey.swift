@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.MinimizeButtonKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/MinimizeButtonKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/MinimizeButtonKey``.
 	static var minimizeButton: Self {
 		Self()
 	}

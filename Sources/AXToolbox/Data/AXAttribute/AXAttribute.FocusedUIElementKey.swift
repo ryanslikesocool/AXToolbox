@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.FocusedUIElementKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/FocusedUIElementKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/FocusedUIElementKey``.
 	static var focusedUIElement: Self {
 		Self()
 	}

@@ -2,7 +2,7 @@ public protocol AXAttributeProtocol<Input, Output> {
 	associatedtype Input
 	associatedtype Output
 
-	func process(_ input: Input) -> Output
+	func process(_ input: Input) throws -> Output
 }
 
 // MARK: - Intrinsic

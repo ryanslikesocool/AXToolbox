@@ -17,7 +17,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.EnabledKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/EnabledKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/EnabledKey``.
 	static var enabled: Self {
 		Self()
 	}

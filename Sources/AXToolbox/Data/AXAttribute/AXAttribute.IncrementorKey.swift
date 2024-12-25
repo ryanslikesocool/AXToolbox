@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.IncrementorKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/IncrementorKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/IncrementorKey``.
 	static var incrementor: Self {
 		Self()
 	}

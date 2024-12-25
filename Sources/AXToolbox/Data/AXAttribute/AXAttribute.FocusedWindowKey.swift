@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.FocusedWindowKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/FocusedWindowKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/FocusedWindowKey``.
 	static var focusedWindow: Self {
 		Self()
 	}

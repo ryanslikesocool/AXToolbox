@@ -20,7 +20,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.NumberOfCharactersKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/NumberOfCharactersKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/NumberOfCharactersKey``.
 	static var numberOfCharacters: Self {
 		Self()
 	}

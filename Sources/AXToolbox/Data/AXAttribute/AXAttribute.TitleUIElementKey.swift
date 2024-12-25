@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.TitleUIElementKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/TitleUIElementKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/TitleUIElementKey``.
 	static var titleUIElement: Self {
 		Self()
 	}

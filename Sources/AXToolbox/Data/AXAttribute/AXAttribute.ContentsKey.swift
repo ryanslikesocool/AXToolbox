@@ -17,7 +17,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.ContentsKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/ContentsKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/ContentsKey``.
 	static var contents: Self {
 		Self()
 	}

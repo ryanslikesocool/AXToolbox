@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.ProxyKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/ProxyKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/ProxyKey``.
 	static var proxy: Self {
 		Self()
 	}

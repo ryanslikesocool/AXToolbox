@@ -20,7 +20,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.InsertionPointLineNumberKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/InsertionPointLineNumberKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/InsertionPointLineNumberKey``.
 	static var insertionPointLineNumber: Self {
 		Self()
 	}

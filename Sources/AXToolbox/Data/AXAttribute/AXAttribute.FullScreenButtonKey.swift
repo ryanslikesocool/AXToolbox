@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.FullScreenButtonKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/FullScreenButtonKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/FullScreenButtonKey``.
 	static var fullScreenButton: Self {
 		Self()
 	}

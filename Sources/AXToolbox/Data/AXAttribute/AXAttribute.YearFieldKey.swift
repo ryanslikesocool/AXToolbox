@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.YearFieldKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/YearFieldKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/YearFieldKey``.
 	static var yearField: Self {
 		Self()
 	}

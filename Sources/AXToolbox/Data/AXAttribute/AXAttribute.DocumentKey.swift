@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.DocumentKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/DocumentKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/DocumentKey``.
 	static var document: Self {
 		Self()
 	}

@@ -18,7 +18,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.ToolbarButtonKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/ToolbarButtonKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/ToolbarButtonKey``.
 	static var toolbarButton: Self {
 		Self()
 	}

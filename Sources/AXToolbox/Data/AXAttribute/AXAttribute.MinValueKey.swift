@@ -17,7 +17,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.MinValueKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/MinValueKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/MinValueKey``.
 	static var minValue: Self {
 		Self()
 	}

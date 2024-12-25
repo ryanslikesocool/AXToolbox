@@ -17,7 +17,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.ValueIncrementKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/ValueIncrementKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/ValueIncrementKey``.
 	static var valueIncrement: Self {
 		Self()
 	}

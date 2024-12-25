@@ -12,9 +12,10 @@ public extension AXAttribute {
 
 		public init() { }
 
-		public func process(_ input: Input) -> Value? {
-			guard let rawValue = try? input.value(forAttribute: Self.attributeKey) as? String else {
-				return nil
+		public func process(_ input: Input) throws -> Output {
+			let originalValue = try input.value(forAttribute: Self.attributeKey)
+			guard let rawValue = originalValue as? Value.RawValue else {
+				throw AXAttributeError.castFailed(input: type(of: originalValue), output: Value.RawValue.self)
 			}
 			return Value(rawValue: rawValue)
 		}
@@ -26,7 +27,7 @@ public extension AXAttribute {
 public extension AXAttributeProtocol where
 	Self == AXAttribute.RoleKey
 {
-	/// The shorthand attribute key accessor for ``AXAttributeNamespace/RoleKey``.
+	/// The shorthand attribute key accessor for ``AXAttribute/RoleKey``.
 	static var role: Self {
 		Self()
 	}
