@@ -55,11 +55,14 @@ public extension AXUIElement {
 		try value(forAttribute: attributeName as CFString)
 	}
 
-	/// Returns the value of an accessibility object's attribute.
-	/// - Parameter attributeName: The attribute name.
-	/// - Returns: The value associated with the specified attribute.
-	func value(forAttribute attributeName: AXAttributeName) throws(AccessibilityError) -> CFTypeRef {
-		try value(forAttribute: attributeName.rawValue as CFString)
+	/// Returns the value for the attribute name specified by the given key.
+	/// - Parameter attributeKey: The key that specifies the name of a accessibility attribute.
+	/// - Returns: The value for the attribute name specified by `attributeKey`, if it could be found; `nil` otherwise.
+	func value<Key>(forAttribute attributeKey: Key) -> Key.Output where
+		Key: AXAttributeProtocol,
+		Key.Input == AXUIElement
+	{
+		attributeKey.process(self)
 	}
 
 	// MARK: - AXUIElementCopyAttributeValues
@@ -69,7 +72,8 @@ public extension AXUIElement {
 	///   - attributeName: The attribute name.
 	///   - startIndex: The index into the array.
 	///   - maxValues: The maximum number of values you want (this may be more or less than the number of values associated with the attribute).
-	/// - Returns: The attribute values you requested. If `maxValues` is greater than the number of values associated with the attribute, the array will contain values found between `startIndex` and the end of the attribute's array, inclusive.
+	/// - Returns: The attribute values you requested.
+	/// If `maxValues` is greater than the number of values associated with the attribute, the array will contain values found between `startIndex` and the end of the attribute's array, inclusive.
 	func values(forAttribute attributeName: CFString, startIndex: CFIndex = .zero, maxValues: CFIndex) throws(AccessibilityError) -> CFArray {
 		var values: CFArray?
 		let resultCode = AXUIElementCopyAttributeValues(self, attributeName, startIndex, maxValues, &values)
@@ -85,20 +89,25 @@ public extension AXUIElement {
 	///   - attributeName: The attribute name.
 	///   - startIndex: The index into the array.
 	///   - maxValues: The maximum number of values you want (this may be more or less than the number of values associated with the attribute).
-	/// - Returns: The attribute values you requested. If `maxValues` is greater than the number of values associated with the attribute, the array will contain values found between `startIndex` and the end of the attribute's array, inclusive.
+	/// - Returns: The attribute values you requested.
+	/// If `maxValues` is greater than the number of values associated with the attribute, the array will contain values found between `startIndex` and the end of the attribute's array, inclusive.
 	func values(forAttribute attributeName: String, startIndex: CFIndex = .zero, maxValues: CFIndex) throws(AccessibilityError) -> CFArray {
 		try values(forAttribute: attributeName as CFString, startIndex: startIndex, maxValues: maxValues)
 	}
 
 	/// Returns an array of attribute values for the accessibility object's attribute, starting at the specified `startIndex`.
 	/// - Parameters:
-	///   - attributeName: The attribute name.
+	///   - attributeKey: The attribute key.
 	///   - startIndex: The index into the array.
 	///   - maxValues: The maximum number of values you want (this may be more or less than the number of values associated with the attribute).
-	/// - Returns: The attribute values you requested. If `maxValues` is greater than the number of values associated with the attribute, the array will contain values found between `startIndex` and the end of the attribute's array, inclusive.
-	func values(forAttribute attributeName: AXAttributeName, startIndex: CFIndex = .zero, maxValues: CFIndex) throws(AccessibilityError) -> CFArray {
-		try values(forAttribute: attributeName.rawValue as CFString, startIndex: startIndex, maxValues: maxValues)
-	}
+	/// - Returns: The attribute values you requested.
+	/// If `maxValues` is greater than the number of values associated with the attribute, the array will contain values found between `startIndex` and the end of the attribute's array, inclusive.
+	// TODO: Restrict to `Key.Value == Array`
+//	func values<Key>(forAttribute attributeKey: Key, startIndex: CFIndex = .zero, maxValues: CFIndex) -> CFArray? where
+//		Key: AXAttributeKey
+//	{
+//		try? values(forAttribute: Key.attributeKey, startIndex: startIndex, maxValues: maxValues)
+//	}
 
 	// MARK: - AXUIElementCopyMultipleAttributeValues
 
@@ -141,14 +150,14 @@ public extension AXUIElement {
 	}
 
 	// overkill?
-//	func values(forAttributes attributeNames: some Sequence<CFString>, options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
-//		try values(forAttributes: Array(attributeNames), options: options)
-//	}
+	//	func values(forAttributes attributeNames: some Sequence<CFString>, options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
+	//		try values(forAttributes: Array(attributeNames), options: options)
+	//	}
 
 	// overkill?
-//	func values(forAttributes firstAttributeName: CFString, _ secondAttributeName: CFString, _ otherAttributeNames: CFString..., options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
-//		try values(forAttributes: [firstAttributeName, secondAttributeName] + Array(otherAttributeNames), options: options)
-//	}
+	//	func values(forAttributes firstAttributeName: CFString, _ secondAttributeName: CFString, _ otherAttributeNames: CFString..., options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
+	//		try values(forAttributes: [firstAttributeName, secondAttributeName] + Array(otherAttributeNames), options: options)
+	//	}
 
 	/// Returns the values of multiple attributes in the accessibility object.
 	/// - Parameters:
@@ -166,39 +175,14 @@ public extension AXUIElement {
 	}
 
 	// overkill?
-//	func values(forAttributes attributeNames: some Sequence<String>, options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
-//		try values(forAttributes: Array(attributeNames), options: options)
-//	}
+	//	func values(forAttributes attributeNames: some Sequence<String>, options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
+	//		try values(forAttributes: Array(attributeNames), options: options)
+	//	}
 
 	// overkill?
-//	func values(forAttributes firstAttributeName: String, _ secondAttributeName: String, _ otherAttributeNames: String..., options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
-//		try values(forAttributes: [firstAttributeName, secondAttributeName] + Array(otherAttributeNames), options: options)
-//	}
-
-	/// Returns the values of multiple attributes in the accessibility object.
-	/// - Parameters:
-	///   - attributeNames: An array of attribute names.
-	///   - options: A value that tells `AXUIElementCopyMultipleAttributeValues` how to handle errors.
-	/// - Returns: An array in which each position contains the value of the attribute that is in the corresponding position in the passed-in attributes array.
-	/// If `options.isEmpty`, the array can contain an
-	/// [`AXValue`](https://developer.apple.com/documentation/applicationservices/axvalue)
-	/// of type
-	/// [`AXValueType.axError`](https://developer.apple.com/documentation/applicationservices/axvaluetype/axerror)
-	/// in the corresponding position.
-	/// If `options.contains(.stopOnError)`, this function will return immediately when it gets an error.
-	func values(forAttributes attributeNames: [AXAttributeName], options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
-		try values(forAttributes: attributeNames.map { attributeName in attributeName.rawValue as CFString }, options: options)
-	}
-
-	// overkill?
-//	func values(forAttributes attributeNames: some Sequence<AccessibilityAttributeName>, options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
-//		try values(forAttributes: Array(attributeNames), options: options)
-//	}
-
-	// overkill?
-//	func values(forAttributes firstAttributeName: AccessibilityAttributeName, _ secondAttributeName: AccessibilityAttributeName, _ otherAttributeNames: AccessibilityAttributeName..., options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
-//		try values(forAttributes: [firstAttributeName, secondAttributeName] + Array(otherAttributeNames), options: options)
-//	}
+	//	func values(forAttributes firstAttributeName: String, _ secondAttributeName: String, _ otherAttributeNames: String..., options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
+	//		try values(forAttributes: [firstAttributeName, secondAttributeName] + Array(otherAttributeNames), options: options)
+	//	}
 
 	// MARK: - AXUIElementGetAttributeValueCount
 
@@ -222,11 +206,14 @@ public extension AXUIElement {
 	}
 
 	/// Returns the count of the array of an accessibility object's attribute value.
-	/// - Parameter attributeName: The attribute name.
+	/// - Parameter attributeKey: The attribute key.
 	/// - Returns: The size of the array that is the attribute's value.
-	func valueCount(forAttribute attributeName: AXAttributeName) throws(AccessibilityError) -> CFIndex {
-		try valueCount(forAttribute: attributeName.rawValue as CFString)
-	}
+	// TODO: Restrict to `Key.Value == Array`
+//	func valueCount<Key>(forAttribute attributeKey: Key) -> CFIndex? where
+//		Key: AXAttributeKey
+//	{
+//		try? valueCount(forAttribute: Key.attributeKey)
+//	}
 
 	// MARK: - subelements
 
@@ -239,14 +226,17 @@ public extension AXUIElement {
 		try subelements(forAttribute: attributeName as CFString)
 	}
 
-	func subelements(forAttribute attributeName: AXAttributeName) throws(AccessibilityError) -> CFArray {
-		try subelements(forAttribute: attributeName.rawValue as CFString)
-	}
+	// TODO: Restrict to `Key.Value == Array`
+//	func subelements<Key>(forAttribute attributeKey: Key) -> CFArray? where
+//		Key: AXAttributeKey
+//	{
+//		try? subelements(forAttribute: Key.attributeKey)
+//	}
 
 	// MARK: - children
 
 	func children() throws(AccessibilityError) -> [AXUIElement] {
 		// VALIDATE: is force-unwrapping safe here?
-		try subelements(forAttribute: .children) as! [AXUIElement]
+		try subelements(forAttribute: AXAttribute.ChildrenKey.attributeKey) as! [AXUIElement]
 	}
 }
