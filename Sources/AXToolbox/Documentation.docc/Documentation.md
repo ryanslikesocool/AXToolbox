@@ -1,8 +1,6 @@
-# ``SwiftyAccessibility``
+# ``AXToolbox``
 
-Extensions and conveniences to make macOS accessibility APIs Swiftier™️.
+## Overview
 
-## Topics
-
-- <doc:Wrappers>
-- <doc:Convenience>
+Extensions and conveniences for
+[macOS accessibility APIs](https://developer.apple.com/documentation/applicationservices/carbon_accessibility)\.
