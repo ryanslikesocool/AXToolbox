@@ -107,7 +107,11 @@ public extension AXUIElement {
 	///   - attributeNames: An array of attribute names.
 	///   - options: A value that tells `AXUIElementCopyMultipleAttributeValues` how to handle errors.
 	/// - Returns: An array in which each position contains the value of the attribute that is in the corresponding position in the passed-in attributes array.
-	/// If `options.isEmpty`, the array can contain an [`AXValue`](https://developer.apple.com/documentation/applicationservices/axvalue) of type [`AXValueType.axError`](https://developer.apple.com/documentation/applicationservices/axvaluetype/axerror) in the corresponding position.
+	/// If `options.isEmpty`, the array can contain an
+	/// [`AXValue`](https://developer.apple.com/documentation/applicationservices/axvalue)
+	/// of type
+	/// [`AXValueType.axError`](https://developer.apple.com/documentation/applicationservices/axvaluetype/axerror)
+	/// in the corresponding position.
 	/// If `options.contains(.stopOnError)`, this function will return immediately when it gets an error.
 	func values(forAttributes attributeNames: CFArray, options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
 		var values: CFArray?
@@ -126,7 +130,11 @@ public extension AXUIElement {
 	///   - attributeNames: An array of attribute names.
 	///   - options: A value that tells `AXUIElementCopyMultipleAttributeValues` how to handle errors.
 	/// - Returns: An array in which each position contains the value of the attribute that is in the corresponding position in the passed-in attributes array.
-	/// If `options.isEmpty`, the array can contain an [`AXValue`](https://developer.apple.com/documentation/applicationservices/axvalue) of type [`AXValueType.axError`](https://developer.apple.com/documentation/applicationservices/axvaluetype/axerror) in the corresponding position.
+	/// If `options.isEmpty`, the array can contain an
+	/// [`AXValue`](https://developer.apple.com/documentation/applicationservices/axvalue)
+	/// of type
+	/// [`AXValueType.axError`](https://developer.apple.com/documentation/applicationservices/axvaluetype/axerror)
+	/// in the corresponding position.
 	/// If `options.contains(.stopOnError)`, this function will return immediately when it gets an error.
 	func values(forAttributes attributeNames: [CFString], options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
 		try values(forAttributes: attributeNames as CFArray, options: options)
@@ -147,7 +155,11 @@ public extension AXUIElement {
 	///   - attributeNames: An array of attribute names.
 	///   - options: A value that tells `AXUIElementCopyMultipleAttributeValues` how to handle errors.
 	/// - Returns: An array in which each position contains the value of the attribute that is in the corresponding position in the passed-in attributes array.
-	/// If `options.isEmpty`, the array can contain an [`AXValue`](https://developer.apple.com/documentation/applicationservices/axvalue) of type [`AXValueType.axError`](https://developer.apple.com/documentation/applicationservices/axvaluetype/axerror) in the corresponding position.
+	/// If `options.isEmpty`, the array can contain an
+	/// [`AXValue`](https://developer.apple.com/documentation/applicationservices/axvalue)
+	/// of type
+	/// [`AXValueType.axError`](https://developer.apple.com/documentation/applicationservices/axvaluetype/axerror)
+	/// in the corresponding position.
 	/// If `options.contains(.stopOnError)`, this function will return immediately when it gets an error.
 	func values(forAttributes attributeNames: [String], options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
 		try values(forAttributes: attributeNames.map { attributeName in attributeName as CFString }, options: options)
@@ -168,7 +180,11 @@ public extension AXUIElement {
 	///   - attributeNames: An array of attribute names.
 	///   - options: A value that tells `AXUIElementCopyMultipleAttributeValues` how to handle errors.
 	/// - Returns: An array in which each position contains the value of the attribute that is in the corresponding position in the passed-in attributes array.
-	/// If `options.isEmpty`, the array can contain an [`AXValue`](https://developer.apple.com/documentation/applicationservices/axvalue) of type [`AXValueType.axError`](https://developer.apple.com/documentation/applicationservices/axvaluetype/axerror) in the corresponding position.
+	/// If `options.isEmpty`, the array can contain an
+	/// [`AXValue`](https://developer.apple.com/documentation/applicationservices/axvalue)
+	/// of type
+	/// [`AXValueType.axError`](https://developer.apple.com/documentation/applicationservices/axvaluetype/axerror)
+	/// in the corresponding position.
 	/// If `options.contains(.stopOnError)`, this function will return immediately when it gets an error.
 	func values(forAttributes attributeNames: [AXAttributeName], options: AXCopyMultipleAttributeOptions = []) throws(AccessibilityError) -> [AXValue] {
 		try values(forAttributes: attributeNames.map { attributeName in attributeName.rawValue as CFString }, options: options)
