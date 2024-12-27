@@ -1,5 +1,5 @@
-public extension AXAttributeModifier {
-	struct FilterModifier<Input>: AXAttributeProtocol where
+public extension AXAttributeModifiers {
+	struct Filter<Input>: AXAttributeProtocol where
 		Input: Sequence
 	{
 		public typealias Output = [Input.Element]
@@ -25,7 +25,7 @@ public extension AXAttributeProtocol {
 	) -> some AXAttributeProtocol<Self.Input, [Self.Output.Element]> where
 		Self.Output: Sequence
 	{
-		let modifier = AXAttributeModifier.FilterModifier<Self.Output>(isIncluded)
+		let modifier = AXAttributeModifiers.Filter<Self.Output>(isIncluded)
 		return self.modifier(modifier)
 	}
 }

@@ -1,5 +1,5 @@
-public extension AXAttributeModifier {
-	struct FlatMapModifier<Input, SegmentOfResult>: AXAttributeProtocol where
+public extension AXAttributeModifiers {
+	struct FlatMap<Input, SegmentOfResult>: AXAttributeProtocol where
 		Input: Sequence,
 		SegmentOfResult: Sequence
 	{
@@ -25,7 +25,7 @@ public extension AXAttributeProtocol {
 		Self.Output: Sequence,
 		SegmentOfResult: Sequence
 	{
-		let modifier = AXAttributeModifier.FlatMapModifier<Self.Output, SegmentOfResult>(transform)
+		let modifier = AXAttributeModifiers.FlatMap<Self.Output, SegmentOfResult>(transform)
 		return self.modifier(modifier)
 	}
 }

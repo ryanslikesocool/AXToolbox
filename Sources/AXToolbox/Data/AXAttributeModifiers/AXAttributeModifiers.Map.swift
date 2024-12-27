@@ -1,5 +1,5 @@
-public extension AXAttributeModifier {
-	struct MapModifier<Input, Output>: AXAttributeProtocol {
+public extension AXAttributeModifiers {
+	struct Map<Input, Output>: AXAttributeProtocol {
 		private let transform: (Input) throws -> Output
 
 		public init(_ transform: @escaping (Input) throws -> Output) {
@@ -19,7 +19,7 @@ public extension AXAttributeProtocol {
 	func map<Output>(
 		_ transform: @escaping (Self.Output) throws -> Output
 	) -> some AXAttributeProtocol<Self.Input, Output> {
-		let modifier = AXAttributeModifier.MapModifier(transform)
+		let modifier = AXAttributeModifiers.Map(transform)
 		return self.modifier(modifier)
 	}
 

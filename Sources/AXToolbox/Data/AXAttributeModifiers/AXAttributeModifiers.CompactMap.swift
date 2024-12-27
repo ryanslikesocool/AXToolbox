@@ -1,5 +1,5 @@
-public extension AXAttributeModifier {
-	struct CompactMapModifier<Input, OutputElement>: AXAttributeProtocol where
+public extension AXAttributeModifiers {
+	struct CompactMap<Input, OutputElement>: AXAttributeProtocol where
 		Input: Sequence
 	{
 		private let transform: (Input.Element) throws -> OutputElement?
@@ -23,7 +23,7 @@ public extension AXAttributeProtocol {
 	) -> some AXAttributeProtocol<Self.Input, [OutputElement]> where
 		Self.Output: Sequence
 	{
-		let modifier = AXAttributeModifier.CompactMapModifier<Self.Output, OutputElement>(transform)
+		let modifier = AXAttributeModifiers.CompactMap<Self.Output, OutputElement>(transform)
 		return self.modifier(modifier)
 	}
 }
