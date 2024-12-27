@@ -15,7 +15,7 @@ Breaking changes are common, documentation is incomplete, and support is limited
 
 Add the following entry to your package dependencies...
 ```swift
-.package(url: "https://github.com/ryanslikesocool/AXToolbox.git", from: "0.0.2"),
+.package(url: "https://github.com/ryanslikesocool/AXToolbox.git", from: "0.0.3"),
 ```
 ...and your target dependencies.
 ```swift
@@ -31,6 +31,8 @@ Add the following entry to your package dependencies...
 
 
 ## Documentation
+
+[Quick Start Guide](Sources/AXToolbox/Documentation.docc/Articles/QuickStart.md)
 
 Most of this package is documented with
 [DocC](https://www.swift.org/documentation/docc/)\.

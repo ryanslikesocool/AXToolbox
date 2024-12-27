@@ -48,21 +48,23 @@ public extension AXUIElement {
 	///
 	/// - Parameter attributeName: The attribute name.
 	/// - Returns: The value associated with the specified attribute.
-	func value(forAttribute attributeName: CFString) throws(AccessibilityError) -> CFTypeRef {
+	func value(forAttribute attributeName: CFString) throws -> CFTypeRef {
 		var value: CFTypeRef?
 		let resultCode = AXUIElementCopyAttributeValue(self, attributeName, &value)
 
 		try AccessibilityError.test(resultCode)
 
-		// VALIDATE: is force-unwrapping safe here?
-		return value!
+		guard let value else {
+			throw AXAttributeError.unexpectedNil
+		}
+		return value
 	}
 
 	/// Returns the value of an accessibility object's attribute.
 	///
 	/// - Parameter attributeName: The attribute name.
 	/// - Returns: The value associated with the specified attribute.
-	func value(forAttribute attributeName: String) throws(AccessibilityError) -> CFTypeRef {
+	func value(forAttribute attributeName: String) throws -> CFTypeRef {
 		try value(forAttribute: attributeName as CFString)
 	}
 
@@ -227,7 +229,7 @@ public extension AXUIElement {
 	///
 	/// - Parameter attributeName: The attribute name.
 	/// - Returns: The size of the array that is the attribute's value.
-	func valueCount(forAttribute attributeName: CFString) throws(AccessibilityError) -> CFIndex {
+	func valueCount(forAttribute attributeName: CFString) throws -> CFIndex {
 		var count: CFIndex = 0
 		let resultCode = AXUIElementGetAttributeValueCount(self, attributeName, &count)
 
@@ -240,7 +242,7 @@ public extension AXUIElement {
 	///
 	/// - Parameter attributeName: The attribute name.
 	/// - Returns: The size of the array that is the attribute's value.
-	func valueCount(forAttribute attributeName: String) throws(AccessibilityError) -> CFIndex {
+	func valueCount(forAttribute attributeName: String) throws -> CFIndex {
 		try valueCount(forAttribute: attributeName as CFString)
 	}
 

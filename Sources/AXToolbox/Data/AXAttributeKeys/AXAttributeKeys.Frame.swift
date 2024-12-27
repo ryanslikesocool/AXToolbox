@@ -4,7 +4,7 @@ import struct CoreGraphics.CGRect
 import struct CoreGraphics.CGSize
 
 public extension AXAttributeKeys {
-	/// An attribute key that combines the output of ``AXAttributeKeys/PositionKey`` and ``AXAttributeKeys/SizeKey``.
+	/// An attribute key that combines the output of ``AXAttributeKeys/Position`` and ``AXAttributeKeys/Size``.
 	struct Frame: AXAttributeKey {
 		public typealias Value = CGRect
 
