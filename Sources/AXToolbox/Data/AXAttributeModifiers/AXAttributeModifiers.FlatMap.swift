@@ -1,5 +1,5 @@
 public extension AXAttributeModifiers {
-	struct FlatMap<Input, SegmentOfResult>: AXAttributeProtocol where
+	struct FlatMap<Input, SegmentOfResult>: AXAttributeObject where
 		Input: Sequence,
 		SegmentOfResult: Sequence
 	{
@@ -17,11 +17,11 @@ public extension AXAttributeModifiers {
 
 // MARK: - Convenience
 
-public extension AXAttributeProtocol {
+public extension AXAttributeObject {
 	/// Perform a `flatMap` operation on an attribute value.
 	func flatMap<SegmentOfResult>(
 		_ transform: @escaping (Self.Output.Element) throws -> SegmentOfResult
-	) -> some AXAttributeProtocol<Self.Input, [SegmentOfResult.Element]> where
+	) -> some AXAttributeObject<Self.Input, [SegmentOfResult.Element]> where
 		Self.Output: Sequence,
 		SegmentOfResult: Sequence
 	{

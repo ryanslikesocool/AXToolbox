@@ -14,7 +14,7 @@ public extension AXAttributeKeys {
 
 // MARK: - Convenience
 
-public extension AXAttributeProtocol where
+public extension AXAttributeObject where
 	Self == AXAttributeKeys.HorizontalUnitDescription
 {
 	/// The shorthand attribute key accessor for ``AXAttributeKeys/HorizontalUnitDescription``.

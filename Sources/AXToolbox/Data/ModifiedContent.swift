@@ -8,11 +8,11 @@ internal struct ModifiedContent<Upstream, Downstream> {
 	}
 }
 
-// MARK: - AXAttributeProtocol
+// MARK: - AXAttributeObject
 
-extension ModifiedContent: AXAttributeProtocol where
-	Upstream: AXAttributeProtocol,
-	Downstream: AXAttributeProtocol,
+extension ModifiedContent: AXAttributeObject where
+	Upstream: AXAttributeObject,
+	Downstream: AXAttributeObject,
 	Upstream.Output == Downstream.Input
 {
 	typealias Input = Upstream.Input

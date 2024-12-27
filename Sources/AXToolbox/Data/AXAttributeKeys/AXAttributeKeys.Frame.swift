@@ -53,7 +53,7 @@ private extension AXAttributeKeys.Frame {
 
 // MARK: - Convenience
 
-public extension AXAttributeProtocol where
+public extension AXAttributeObject where
 	Self == AXAttributeKeys.Frame
 {
 	/// The shorthand attribute key accessor for ``AXAttributeKeys/Frame``.

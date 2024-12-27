@@ -15,7 +15,7 @@ public extension AXAttributeKeys {
 
 // MARK: - Convenience
 
-public extension AXAttributeProtocol where
+public extension AXAttributeObject where
 	Self == AXAttributeKeys.CloseButton
 {
 	/// The shorthand attribute key accessor for ``AXAttributeKeys/CloseButton``.

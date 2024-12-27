@@ -1,5 +1,5 @@
 public extension AXAttributeModifiers {
-	struct Filter<Input>: AXAttributeProtocol where
+	struct Filter<Input>: AXAttributeObject where
 		Input: Sequence
 	{
 		public typealias Output = [Input.Element]
@@ -18,11 +18,11 @@ public extension AXAttributeModifiers {
 
 // MARK: - Convenience
 
-public extension AXAttributeProtocol {
+public extension AXAttributeObject {
 	/// Perform a `filter` operation on an attribute value.
 	func filter<Output>(
 		_ isIncluded: @escaping (Self.Output.Element) throws -> Bool
-	) -> some AXAttributeProtocol<Self.Input, [Self.Output.Element]> where
+	) -> some AXAttributeObject<Self.Input, [Self.Output.Element]> where
 		Self.Output: Sequence
 	{
 		let modifier = AXAttributeModifiers.Filter<Self.Output>(isIncluded)

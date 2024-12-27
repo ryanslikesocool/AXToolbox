@@ -1,4 +1,4 @@
-public protocol AXAttributeProtocol<Input, Output> {
+public protocol AXAttributeObject<Input, Output> {
 	associatedtype Input
 	associatedtype Output
 
@@ -7,14 +7,14 @@ public protocol AXAttributeProtocol<Input, Output> {
 
 // MARK: - Intrinsic
 
-public extension AXAttributeProtocol {
+public extension AXAttributeObject {
 	/// Apply the given `modifier` to the attribute.
 	/// - Parameter modifier: The modifier to apply to the attribute.
 	/// - Returns: The attribute with the given `modifier` applied.
 	func modifier<Modifier>(
 		_ modifier: Modifier
-	) -> some AXAttributeProtocol<Self.Input, Modifier.Output> where
-		Modifier: AXAttributeProtocol,
+	) -> some AXAttributeObject<Self.Input, Modifier.Output> where
+		Modifier: AXAttributeObject,
 		Self.Output == Modifier.Input
 	{
 		ModifiedContent(upstream: self, downstream: modifier)

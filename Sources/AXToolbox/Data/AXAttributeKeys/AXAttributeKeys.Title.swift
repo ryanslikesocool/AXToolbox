@@ -14,7 +14,7 @@ public extension AXAttributeKeys {
 
 // MARK: - Convenience
 
-public extension AXAttributeProtocol where
+public extension AXAttributeObject where
 	Self == AXAttributeKeys.Title
 {
 	/// The shorthand attribute key accessor for ``AXAttributeKeys/Title``.

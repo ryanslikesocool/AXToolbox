@@ -23,7 +23,7 @@ public extension AXAttributeKeys {
 
 // MARK: - Convenience
 
-public extension AXAttributeProtocol where
+public extension AXAttributeObject where
 	Self == AXAttributeKeys.Size
 {
 	/// The shorthand attribute key accessor for ``AXAttributeKeys/Size``.

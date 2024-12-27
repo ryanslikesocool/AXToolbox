@@ -1,5 +1,5 @@
 public extension AXAttributeModifiers {
-	struct CompactMap<Input, OutputElement>: AXAttributeProtocol where
+	struct CompactMap<Input, OutputElement>: AXAttributeObject where
 		Input: Sequence
 	{
 		private let transform: (Input.Element) throws -> OutputElement?
@@ -16,11 +16,11 @@ public extension AXAttributeModifiers {
 
 // MARK: - Convenience
 
-public extension AXAttributeProtocol {
+public extension AXAttributeObject {
 	/// Perform a `compactMap` operation on an attribute value.
 	func compactMap<OutputElement>(
 		_ transform: @escaping (Self.Output.Element) throws -> OutputElement?
-	) -> some AXAttributeProtocol<Self.Input, [OutputElement]> where
+	) -> some AXAttributeObject<Self.Input, [OutputElement]> where
 		Self.Output: Sequence
 	{
 		let modifier = AXAttributeModifiers.CompactMap<Self.Output, OutputElement>(transform)

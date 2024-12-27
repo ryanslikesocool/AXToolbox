@@ -71,7 +71,7 @@ public extension AXUIElement {
 	/// - Parameter attributeKey: The key that specifies the name of a accessibility attribute.
 	/// - Returns: The value for the attribute name specified by `attributeKey`, if it could be found; `nil` otherwise.
 	func value<Key>(forAttribute attributeKey: Key) throws -> Key.Output where
-		Key: AXAttributeProtocol,
+		Key: AXAttributeObject,
 		Key.Input == AXUIElement
 	{
 		try attributeKey.process(self)
@@ -82,7 +82,7 @@ public extension AXUIElement {
 //	/// - Parameter attributeKeys: The keys that specify the names of accessibility attributes.
 //	/// - Returns: For each element: the value for the attribute name specified by the corresponding item in `attributeKeys`, if it could be found; `nil` otherwise.
 //	func values<each Key>(forAttributes attributeKeys: repeat each Key) -> (repeat (each Key).Output) where
-//		repeat each Key: AXAttributeProtocol,
+//		repeat each Key: AXAttributeObject,
 //		repeat (each Key).Input == AXUIElement // NOTE: Parameter packs do not support this constraint yet.
 //	{
 //		// In an ideal world, this function would:
@@ -258,7 +258,7 @@ public extension AXUIElement {
 	// MARK: - subelements
 
 	// VALIDATE: `func subelements(forAttribute:)` and overloads can probably be removed.
-	// The functionality provided in implementations of `AXAttributeProtocol`
+	// The functionality provided in implementations of `AXAttributeObject`
 	// should cover most, if not all, cases.
 
 	func subelements(forAttribute attributeName: CFString) throws -> CFArray {

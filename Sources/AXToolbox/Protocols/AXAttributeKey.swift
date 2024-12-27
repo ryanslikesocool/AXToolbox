@@ -2,7 +2,7 @@ import class ApplicationServices.HIServices.AXUIElement
 
 /// A key for accessing attribute values in an
 /// [`AXUIElement`](https://developer.apple.com/documentation/applicationservices/axuielement)\.
-public protocol AXAttributeKey: AXAttributeProtocol where
+public protocol AXAttributeKey: AXAttributeObject where
 	Input == AXUIElement,
 	Output == Value
 {
