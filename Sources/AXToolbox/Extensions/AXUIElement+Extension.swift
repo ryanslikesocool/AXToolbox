@@ -273,11 +273,11 @@ public extension AXUIElement {
 	// MARK: - children
 
 	// VALIDATE: `func children()` can probably be removed.
-	// The functionality provided by `AXAttribute.ChildrenKey`
+	// The functionality provided by `AXAttributeKeys.ChildrenKey`
 	// should cover most, if not all, cases.
 
 	func children() throws -> [AXUIElement] {
-		let subelements = try self.subelements(forAttribute: AXAttribute.ChildrenKey.attributeKey)
+		let subelements = try self.subelements(forAttribute: AXAttributeKeys.Children.attributeKey)
 		guard let result = subelements as? [AXUIElement] else {
 			throw AXAttributeError.castFailed(input: CFArray.self, output: [AXUIElement].self)
 		}
