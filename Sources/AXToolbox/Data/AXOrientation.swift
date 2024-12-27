@@ -3,6 +3,7 @@ import let ApplicationServices.HIServices.kAXUnknownOrientationValue
 import let ApplicationServices.HIServices.kAXVerticalOrientationValue
 
 // TODO: Should this be `@frozen`?
+/// Constants describing the orientation of an accessibility object.
 public enum AXOrientation {
 	/// The constant for
 	/// [`kAXHorizontalOrientationValue`](https://developer.apple.com/documentation/applicationservices/kaxhorizontalorientationvalue)\.

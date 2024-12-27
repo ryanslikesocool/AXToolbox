@@ -15,7 +15,7 @@ public extension AXAttributeKeys {
 		public func process(_ input: Input) throws -> Output {
 			let originalValue = try input.value(forAttribute: Self.attributeKey)
 			guard let rawValue = originalValue as? Value.RawValue else {
-				throw AXAttributeError.castFailed(input: type(of: originalValue), output: Value.RawValue.self)
+				throw AccessibilityError.castFailed(from: originalValue, to: Value.RawValue.self)
 			}
 			return Value(rawValue: rawValue)
 		}

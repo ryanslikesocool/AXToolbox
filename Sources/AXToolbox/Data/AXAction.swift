@@ -1,6 +1,6 @@
 import ApplicationServices.HIServices.AXActionConstants
 
-/// A wrapper for actions defined in
+/// Constants for actions defined in
 /// [AXActionConstants.h](https://developer.apple.com/documentation/applicationservices/axactionconstants_h)\.
 @frozen
 public struct AXAction {

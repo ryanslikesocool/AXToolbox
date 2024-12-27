@@ -3,6 +3,7 @@ import let ApplicationServices.HIServices.kAXDescendingSortDirectionValue
 import let ApplicationServices.HIServices.kAXUnknownSortDirectionValue
 
 // TODO: Should this be `@frozen`?
+/// Constants describing the sort direction of an accessibility object.
 public enum AXSortDirection {
 	/// The constant for
 	/// [`kAXAscendingSortDirectionValue`](https://developer.apple.com/documentation/applicationservices/kaxascendingsortdirectionvalue)\.

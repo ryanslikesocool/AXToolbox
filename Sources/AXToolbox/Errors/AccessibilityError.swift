@@ -1,52 +1,74 @@
 import enum ApplicationServices.HIServices.AXError
+import enum ApplicationServices.HIServices.AXValueType
 
-/// An object that wraps
-/// [`AXError`](https://developer.apple.com/documentation/applicationservices/axerror)\,
-/// allowing it to be used as an
-/// [`Error`](https://developer.apple.com/documentation/swift/error)\.
-public struct AccessibilityError: Swift.Error, RawRepresentable {
-	public let rawValue: AXError
+public struct AccessibilityError {
+	private let rawValue: RawValue
 
-	/// Create an accessibility error by wrapping an
-	/// ['AXError'](https://developer.apple.com/documentation/applicationservices/axerror)\.
-	///
-	/// - Remark: If the provided argument is
-	/// [`success`](https://developer.apple.com/documentation/applicationservices/axerror/success)\,
-	/// this initializer will return `nil`.
-	///
-	/// - Parameter rawValue: The `AXError` to wrap.
-	public init?(rawValue: RawValue) {
+	private init?(rawValue: RawValue) {
 		switch rawValue {
-			case .success:
-				return nil
+			case let .axError(axError):
+				guard axError != .success else {
+					return nil
+				}
 			default:
-				self.rawValue = rawValue
+				break
 		}
+
+		self.rawValue = rawValue
 	}
 }
+
+// MARK: - Sendable
+
+extension AccessibilityError: Sendable { }
+
+// MARK: - Error
+
+extension AccessibilityError: Error { }
 
 // MARK: - Convenience
 
 public extension AccessibilityError {
 	/// Create an accessibility error by wrapping an
-	/// ['AXError'](https://developer.apple.com/documentation/applicationservices/axerror)\.
+	/// [`AXError`](https://developer.apple.com/documentation/applicationservices/axerror)\.
 	///
 	/// - Remark: If the provided argument is
 	/// [`success`](https://developer.apple.com/documentation/applicationservices/axerror/success)\,
-	/// this initializer will return `nil`.
-	///
-	/// - Parameter rawValue: The `AXError` to wrap.
-	init?(_ rawValue: RawValue) {
-		self.init(rawValue: rawValue)
+	/// this function will return `nil`.
+	static func axError(_ axError: AXError) -> Self? {
+		Self(rawValue: .axError(axError))
 	}
 
-	/// Wrap an
-	/// ['AXError'](https://developer.apple.com/documentation/applicationservices/axerror)
-	/// using ``init(_:)`` and immediately throw if the argument is not
-	/// [`success`](https://developer.apple.com/documentation/applicationservices/axerror/success)\.
-	static func test(_ rawValue: AXError) throws(Self) {
-		if let error = Self(rawValue: rawValue) {
-			throw error
+	static func castFailed(from input: Any.Type, to output: Any.Type) -> Self {
+		Self(rawValue: .castFailed(input: input, output: output))!
+	}
+
+	static func castFailed<Input>(from _: borrowing Input, to output: Any.Type) -> Self {
+		castFailed(from: Input.self, to: output)
+	}
+
+	static func illegalType(_ valueType: Any.Type) -> Self {
+		Self(rawValue: .illegalType(valueType))!
+	}
+
+	static func invalidDefaultValue(_ valueType: Any.Type) -> Self {
+		Self(rawValue: .invalidDefaultValue(valueType))!
+	}
+
+	static func decodingFailed(_ valueType: AXValueType) -> Self {
+		Self(rawValue: .decodingFailed(valueType))!
+	}
+}
+
+// MARK: - Utility
+
+public extension AccessibilityError {
+	/// Throw if the given `axError` is not
+	/// [`success`](https://developer.apple.com/documentation/applicationservices/axerror/success)\,
+	static func testAXError(_ axError: AXError) throws {
+		guard let error = Self.axError(axError) else {
+			return
 		}
+		throw error
 	}
 }

@@ -1,4 +1,5 @@
 import ApplicationServices
+import CoreGraphics
 
 public extension AXValueType {
 	init<Value>(_ type: Value.Type) {
@@ -13,7 +14,7 @@ public extension AXValueType {
 	}
 }
 
-internal extension AXValueType {
+extension AXValueType {
 	var valueMetatype: Any.Type? {
 		switch self {
 			case .cgPoint: CGPoint.self

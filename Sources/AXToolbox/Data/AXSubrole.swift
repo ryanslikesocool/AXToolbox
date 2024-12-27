@@ -1,6 +1,6 @@
 import ApplicationServices.HIServices.AXRoleConstants
 
-/// A wrapper for subroles defined in
+/// Constants for subroles defined in
 /// [AXRoleConstants.h](https://developer.apple.com/documentation/applicationservices/axroleconstants_h)\.
 @frozen
 public struct AXSubrole: RawRepresentable {

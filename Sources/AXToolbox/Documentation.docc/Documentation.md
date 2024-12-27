@@ -10,3 +10,17 @@ Extensions and conveniences for
 - <doc:QuickStart>
 - <doc:AttributeKeys>
 - <doc:AttributeModifiers>
+
+
+### Constants
+
+- ``AXAction``
+- ``AXOrientation``
+- ``AXRole``
+- ``AXSortDirection``
+- ``AXSubrole``
+
+
+### Errors
+
+- ``AccessibilityError``

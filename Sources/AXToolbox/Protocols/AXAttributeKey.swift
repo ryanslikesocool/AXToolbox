@@ -23,7 +23,7 @@ public extension AXAttributeKey {
 	func process(_ input: Input) throws -> Output {
 		let originalValue = try input.value(forAttribute: Self.attributeKey)
 		guard let castValue = originalValue as? Output else {
-			throw AXAttributeError.castFailed(input: type(of: originalValue), output: Output.self)
+			throw AccessibilityError.castFailed(from: type(of: originalValue), to: Output.self)
 		}
 		return castValue
 	}
