@@ -38,3 +38,10 @@ Most of this package is documented with
 [DocC](https://www.swift.org/documentation/docc/)\.
 <br/>
 To view documentation in Xcode, select `Product > Build Documentation` from the menu bar.
+
+
+## Dependencies
+
+| Dependency | Reason |
+| - | - |
+| [DeclarativeCore](https://github.com/ryanslikesocool/DeclarativeCore) | Shared declarative code. |

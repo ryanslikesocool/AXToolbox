@@ -1,4 +1,5 @@
 import ApplicationServices
+import DeclarativeCore
 
 // Extensions for `AXUIElement` that use
 // [`AXUIElementCopyAttributeValue`](https://developer.apple.com/documentation/applicationservices/1462085-axuielementcopyattributevalue)\.
@@ -35,6 +36,10 @@ public extension AXUIElement {
 		Key: AXAttributeObject,
 		Key.Input == AXUIElement
 	{
+		// TODO: Should we really be restricting `Key: AXAttributeObject`?
+		// Should we actually restrict it to `Key: ObjectProcessor`?
+		// A relaxed restriction may allow us to remove `AXAttributeObject` conformances for modifiers.
+
 		try attributeKey.process(self)
 	}
 

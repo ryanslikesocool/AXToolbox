@@ -9,9 +9,20 @@ let package = Package(
 		.macOS(.v10_13),
 	],
 	products: [
-		.library(name: "AXToolbox", targets: ["AXToolbox"]),
+		.library(
+			name: "AXToolbox",
+			targets: ["AXToolbox"]
+		),
+	],
+	dependencies: [
+		.package(url: "https://github.com/ryanslikesocool/DeclarativeCore.git", from: "0.0.2"),
 	],
 	targets: [
-		.target(name: "AXToolbox"),
+		.target(
+			name: "AXToolbox",
+			dependencies: [
+				"DeclarativeCore",
+			]
+		),
 	]
 )

@@ -1,4 +1,6 @@
-public protocol AXAttributeObject<Input, Output> {
+import DeclarativeCore
+
+public protocol AXAttributeObject<Input, Output>: ObjectProcessor {
 	associatedtype Input
 	associatedtype Output
 
@@ -13,10 +15,10 @@ public extension AXAttributeObject {
 	/// - Returns: The attribute with the given `modifier` applied.
 	func modifier<Modifier>(
 		_ modifier: Modifier
-	) -> some AXAttributeObject<Self.Input, Modifier.Output> where
+	) -> ModifiedObject<Self, Modifier> where
 		Modifier: AXAttributeObject,
 		Self.Output == Modifier.Input
 	{
-		ModifiedContent(upstream: self, downstream: modifier)
+		ModifiedObject(upstream: self, downstream: modifier)
 	}
 }

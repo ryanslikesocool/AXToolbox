@@ -1,4 +1,5 @@
 import ApplicationServices
+import DeclarativeCore
 
 // Extensions for `AXUIElement` that use
 // [`AXUIElementGetAttributeValueCount`](https://developer.apple.com/documentation/applicationservices/1459066-axuielementgetattributevaluecoun)\.
