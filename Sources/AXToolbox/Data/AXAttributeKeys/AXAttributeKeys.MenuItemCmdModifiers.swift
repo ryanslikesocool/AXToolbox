@@ -1,11 +1,15 @@
 import struct ApplicationServices.HIServices.AXAttributeConstants.AXMenuItemModifiers
 import let ApplicationServices.HIServices.AXAttributeConstants.kAXMenuItemCmdModifiersAttribute
+import DeclarativeCore
 
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXMenuItemCmdModifiersAttribute`](https://developer.apple.com/documentation/applicationservices/kaxmenuitemcmdmodifiersattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/menuItemCmdModifiers``
 	struct MenuItemCmdModifiers: AXAttributeKey {
-		public typealias Value = AXMenuItemModifiers
+		public typealias Output = AXMenuItemModifiers
 
 		public static var attributeKey: String { kAXMenuItemCmdModifiersAttribute }
 
@@ -13,10 +17,10 @@ public extension AXAttributeKeys {
 
 		public func process(_ input: Input) throws -> Output {
 			let originalValue = try input.value(forAttribute: Self.attributeKey)
-			guard let rawValue = originalValue as? Value.RawValue else {
-				throw AccessibilityError.castFailed(from: originalValue, to: Value.RawValue.self)
+			guard let rawValue = originalValue as? Output.RawValue else {
+				throw AccessibilityError.castFailed(from: originalValue, to: Output.RawValue.self)
 			}
-			return Value(rawValue: rawValue)
+			return Output(rawValue: rawValue)
 		}
 	}
 }
@@ -26,7 +30,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.MenuItemCmdModifiers
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/MenuItemCmdModifiers``.
+	/// The attribute key for
+	/// [`kAXMenuItemCmdModifiersAttribute`](https://developer.apple.com/documentation/applicationservices/kaxmenuitemcmdmodifiersattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/MenuItemCmdModifiers``
 	static var menuItemCmdModifiers: Self {
 		Self()
 	}

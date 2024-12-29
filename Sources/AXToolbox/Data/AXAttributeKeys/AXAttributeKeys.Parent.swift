@@ -4,8 +4,11 @@ import class ApplicationServices.HIServices.AXUIElement
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXParentAttribute`](https://developer.apple.com/documentation/applicationservices/kaxparentattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/parent``
 	struct Parent: AXAttributeKey {
-		public typealias Value = AXUIElement
+		public typealias Output = AXUIElement
 
 		public static var attributeKey: String { kAXParentAttribute }
 
@@ -18,7 +21,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.Parent
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/Parent``.
+	/// The attribute key for
+	/// [`kAXParentAttribute`](https://developer.apple.com/documentation/applicationservices/kaxparentattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/Parent``
 	static var parent: Self {
 		Self()
 	}

@@ -4,8 +4,11 @@ import class ApplicationServices.HIServices.AXUIElement
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXFocusedUIElementAttribute`](https://developer.apple.com/documentation/applicationservices/kaxfocuseduielementattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/focusedUIElement``
 	struct FocusedUIElement: AXAttributeKey {
-		public typealias Value = AXUIElement
+		public typealias Output = AXUIElement
 
 		public static var attributeKey: String { kAXFocusedUIElementAttribute }
 
@@ -18,7 +21,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.FocusedUIElement
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/FocusedUIElement``.
+	/// The attribute key for
+	/// [`kAXFocusedUIElementAttribute`](https://developer.apple.com/documentation/applicationservices/kaxfocuseduielementattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/FocusedUIElement``
 	static var focusedUIElement: Self {
 		Self()
 	}

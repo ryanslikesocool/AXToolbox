@@ -4,8 +4,11 @@ import class ApplicationServices.HIServices.AXUIElement
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXSelectedChildrenAttribute`](https://developer.apple.com/documentation/applicationservices/kaxselectedchildrenattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/selectedChildren``
 	struct SelectedChildren: AXAttributeKey {
-		public typealias Value = [AXUIElement]
+		public typealias Output = [AXUIElement]
 
 		public static var attributeKey: String { kAXSelectedChildrenAttribute }
 
@@ -18,7 +21,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.SelectedChildren
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/SelectedChildren``.
+	/// The attribute key for
+	/// [`kAXSelectedChildrenAttribute`](https://developer.apple.com/documentation/applicationservices/kaxselectedchildrenattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/SelectedChildren``
 	static var selectedChildren: Self {
 		Self()
 	}

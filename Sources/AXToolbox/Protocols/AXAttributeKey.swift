@@ -4,13 +4,8 @@ import DeclarativeCore
 /// A key for accessing attribute values in an
 /// [`AXUIElement`](https://developer.apple.com/documentation/applicationservices/axuielement)\.
 public protocol AXAttributeKey: AXAttributeObject where
-	Input == AXUIElement,
-	Output == Value
+	Input == AXUIElement
 {
-	/// The expected type of the value returned by
-	/// [`value(forAttribute:)`](https://developer.apple.com/documentation/foundation/nsmetadataitem/1411721-value)\.
-	associatedtype Value
-
 	/// The underlying attribute key.
 	///
 	/// Attribute key constants can be found in
@@ -21,6 +16,7 @@ public protocol AXAttributeKey: AXAttributeObject where
 // MARK: - Default Implementation
 
 public extension AXAttributeKey {
+	/// Retrieve and process the value for the attribute with the ``attributeKey``.
 	func process(_ input: Input) throws -> Output {
 		let originalValue = try input.value(forAttribute: Self.attributeKey)
 		guard let castValue = originalValue as? Output else {

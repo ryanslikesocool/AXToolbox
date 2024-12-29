@@ -4,8 +4,11 @@ import struct Foundation.URL
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXURLAttribute`](https://developer.apple.com/documentation/applicationservices/kaxurlattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/url``
 	struct URL: AXAttributeKey {
-		public typealias Value = Foundation.URL
+		public typealias Output = Foundation.URL
 
 		public static var attributeKey: String { kAXURLAttribute }
 
@@ -18,7 +21,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.URL
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/URL``.
+	/// The attribute key for
+	/// [`kAXURLAttribute`](https://developer.apple.com/documentation/applicationservices/kaxurlattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/URL``
 	static var url: Self {
 		Self()
 	}

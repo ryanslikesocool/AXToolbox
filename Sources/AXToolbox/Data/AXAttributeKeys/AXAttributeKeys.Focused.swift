@@ -3,8 +3,11 @@ import let ApplicationServices.HIServices.AXAttributeConstants.kAXFocusedAttribu
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXFocusedAttribute`](https://developer.apple.com/documentation/applicationservices/kaxfocusedattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/focused``
 	struct Focused: AXAttributeKey {
-		public typealias Value = Bool
+		public typealias Output = Bool
 
 		public static var attributeKey: String { kAXFocusedAttribute }
 
@@ -17,7 +20,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.Focused
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/Focused``.
+	/// The attribute key for
+	/// [`kAXFocusedAttribute`](https://developer.apple.com/documentation/applicationservices/kaxfocusedattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/Focused``
 	static var focused: Self {
 		Self()
 	}

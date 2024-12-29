@@ -3,12 +3,6 @@
 Extensions and conveniences for macOS accessibility APIs. 
 
 
-## Overview
-
-Extensions and conveniences for
-[macOS accessibility APIs](https://developer.apple.com/documentation/applicationservices/carbon_accessibility)\.
-
-
 ## Topics
 
 - <doc:QuickStart>

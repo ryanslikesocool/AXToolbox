@@ -1,11 +1,15 @@
 import ApplicationServices.HIServices
 import struct CoreGraphics.CGPoint
+import DeclarativeCore
 
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXSizeAttribute`](https://developer.apple.com/documentation/applicationservices/kaxsizeattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/size``
 	struct Size: AXAttributeKey {
-		public typealias Value = CGSize
+		public typealias Output = CGSize
 
 		public static var attributeKey: String { kAXSizeAttribute }
 
@@ -26,7 +30,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.Size
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/Size``.
+	/// The attribute key for
+	/// [`kAXSizeAttribute`](https://developer.apple.com/documentation/applicationservices/kaxsizeattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/Size``
 	static var size: Self {
 		Self()
 	}

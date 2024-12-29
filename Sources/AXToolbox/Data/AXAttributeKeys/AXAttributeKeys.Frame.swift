@@ -2,11 +2,15 @@ import ApplicationServices.HIServices
 import struct CoreGraphics.CGPoint
 import struct CoreGraphics.CGRect
 import struct CoreGraphics.CGSize
+import DeclarativeCore
 
 public extension AXAttributeKeys {
 	/// An attribute key that combines the output of ``AXAttributeKeys/Position`` and ``AXAttributeKeys/Size``.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/frame``
 	struct Frame: AXAttributeKey {
-		public typealias Value = CGRect
+		public typealias Output = CGRect
 
 		public static var attributeKey: String {
 			fatalError("""
@@ -56,7 +60,10 @@ private extension AXAttributeKeys.Frame {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.Frame
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/Frame``.
+	/// An attribute key that combines the output of ``AXAttributeKeys/Position`` and ``AXAttributeKeys/Size``.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/Frame``
 	static var frame: Self {
 		Self()
 	}

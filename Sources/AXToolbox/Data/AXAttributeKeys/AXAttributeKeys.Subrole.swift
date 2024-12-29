@@ -1,23 +1,29 @@
 import let ApplicationServices.HIServices.AXAttributeConstants.kAXSubroleAttribute
 import class ApplicationServices.HIServices.AXUIElement
 import class CoreFoundation.CFString
+import DeclarativeCore
 
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXSubroleAttribute`](https://developer.apple.com/documentation/applicationservices/kaxsubroleattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/subrole``
 	struct Subrole: AXAttributeKey {
-		public typealias Value = AXSubrole
+		public typealias Output = AXSubrole
 
 		public static var attributeKey: String { kAXSubroleAttribute }
 
 		public init() { }
 
 		public func process(_ input: Input) throws -> Output {
-			let originalValue = try input.value(forAttribute: Self.attributeKey)
-			guard let rawValue = originalValue as? Value.RawValue else {
-				throw AccessibilityError.castFailed(from: originalValue, to: Value.RawValue.self)
+			let attributeValue = try input.value(forAttribute: Self.attributeKey)
+
+			guard let rawValue = attributeValue as? Output.RawValue else {
+				throw AccessibilityError.castFailed(from: attributeValue, to: Output.RawValue.self)
 			}
-			return Value(rawValue: rawValue)
+			
+			return Output(rawValue: rawValue)
 		}
 	}
 }
@@ -27,7 +33,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.Subrole
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/Subrole``.
+	/// The attribute key for
+	/// [`kAXSubroleAttribute`](https://developer.apple.com/documentation/applicationservices/kaxsubroleattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/Subrole``
 	static var subrole: Self {
 		Self()
 	}

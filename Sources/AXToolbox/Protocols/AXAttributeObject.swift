@@ -1,11 +1,6 @@
 import DeclarativeCore
 
-public protocol AXAttributeObject<Input, Output>: ObjectProcessor {
-	associatedtype Input
-	associatedtype Output
-
-	func process(_ input: Input) throws -> Output
-}
+public protocol AXAttributeObject<Input, Output>: ObjectProcessor { }
 
 // MARK: - Intrinsic
 

@@ -3,8 +3,11 @@ import let ApplicationServices.HIServices.AXAttributeConstants.kAXHiddenAttribut
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXHiddenAttribute`](https://developer.apple.com/documentation/applicationservices/kaxhiddenattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/hidden``
 	struct Hidden: AXAttributeKey {
-		public typealias Value = Bool
+		public typealias Output = Bool
 
 		public static var attributeKey: String { kAXHiddenAttribute }
 
@@ -17,7 +20,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.Hidden
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/Hidden``.
+	/// The attribute key for
+	/// [`kAXHiddenAttribute`](https://developer.apple.com/documentation/applicationservices/kaxhiddenattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/Hidden``
 	static var hidden: Self {
 		Self()
 	}

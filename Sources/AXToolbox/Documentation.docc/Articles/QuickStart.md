@@ -9,15 +9,17 @@ in the form of the ``AXAttributeKey`` protocol.
 import ApplicationServices
 import AXToolbox
 
-func readTitle(from element: AXUIElement) throws -> String {
+func readTitle(
+	from element: AXUIElement
+) throws -> String {
 	var result: String
 
-	// Read attribute values with a fully qualified attribute key initializer...
+	// Read the value with a fully qualified initializer...
 	result = try element.value(
 		forAttribute: AXAttributeKeys.Title()
 	)
 
-	// ...or with a shorthand attribute key accessor.
+	// ...or with a shorthand accessor.
 	result = try element.value(
 		forAttribute: .title
 	)
@@ -37,7 +39,7 @@ and more can be added with a simple declaration.
 // Declare the attribute key...
 struct MyCustomValueAttributeKey: AXAttributeKey {
 	// The type of attribute value that the `attributeKey` points to.
-	typealias Value = String
+	typealias Output = String
 
 	// The key used to access the attribute value.
 	static let attributeKey: String = "MyCustomValueKey"

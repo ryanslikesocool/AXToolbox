@@ -4,8 +4,11 @@ import class ApplicationServices.HIServices.AXUIElement
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXMenuBarAttribute`](https://developer.apple.com/documentation/applicationservices/kaxmenubarattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/menuBar``
 	struct MenuBar: AXAttributeKey {
-		public typealias Value = AXUIElement
+		public typealias Output = AXUIElement
 
 		public static var attributeKey: String { kAXMenuBarAttribute }
 
@@ -18,7 +21,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.MenuBar
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/MenuBar``.
+	/// The attribute key for
+	/// [`kAXMenuBarAttribute`](https://developer.apple.com/documentation/applicationservices/kaxmenubarattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/MenuBar``
 	static var menuBar: Self {
 		Self()
 	}

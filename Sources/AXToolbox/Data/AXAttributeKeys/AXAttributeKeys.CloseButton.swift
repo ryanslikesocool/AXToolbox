@@ -4,8 +4,11 @@ import class ApplicationServices.HIServices.AXUIElement
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXCloseButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxclosebuttonattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/closeButton``
 	struct CloseButton: AXAttributeKey {
-		public typealias Value = AXUIElement
+		public typealias Output = AXUIElement
 
 		public static var attributeKey: String { kAXCloseButtonAttribute }
 
@@ -18,7 +21,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.CloseButton
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/CloseButton``.
+	/// The attribute key for
+	/// [`kAXCloseButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxclosebuttonattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/CloseButton``
 	static var closeButton: Self {
 		Self()
 	}

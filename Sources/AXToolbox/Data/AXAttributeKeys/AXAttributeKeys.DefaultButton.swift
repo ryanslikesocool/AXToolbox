@@ -4,8 +4,11 @@ import class ApplicationServices.HIServices.AXUIElement
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXDefaultButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxdefaultbuttonattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/defaultButton``
 	struct DefaultButton: AXAttributeKey {
-		public typealias Value = AXUIElement
+		public typealias Output = AXUIElement
 
 		public static var attributeKey: String { kAXDefaultButtonAttribute }
 
@@ -18,7 +21,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.DefaultButton
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/DefaultButton``.
+	/// The attribute key for
+	/// [`kAXDefaultButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxdefaultbuttonattribute)\.
+	/// 
+	/// ## See Also
+	/// - ``AXAttributeKeys/DefaultButton``
 	static var defaultButton: Self {
 		Self()
 	}

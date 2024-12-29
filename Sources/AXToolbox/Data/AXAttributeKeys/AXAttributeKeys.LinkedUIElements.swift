@@ -4,8 +4,11 @@ import class ApplicationServices.HIServices.AXUIElement
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXLinkedUIElementsAttribute`](https://developer.apple.com/documentation/applicationservices/kaxlinkeduielementsattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/linkedUIElements``
 	struct LinkedUIElements: AXAttributeKey {
-		public typealias Value = [AXUIElement]
+		public typealias Output = [AXUIElement]
 
 		public static var attributeKey: String { kAXLinkedUIElementsAttribute }
 
@@ -18,7 +21,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.LinkedUIElements
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/LinkedUIElements``.
+	/// The attribute key for
+	/// [`kAXLinkedUIElementsAttribute`](https://developer.apple.com/documentation/applicationservices/kaxlinkeduielementsattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/LinkedUIElements``
 	static var linkedUIElements: Self {
 		Self()
 	}

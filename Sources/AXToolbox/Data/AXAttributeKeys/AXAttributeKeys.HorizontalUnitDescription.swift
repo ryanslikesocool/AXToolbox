@@ -3,8 +3,11 @@ import let ApplicationServices.HIServices.AXAttributeConstants.kAXHorizontalUnit
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXHorizontalUnitDescriptionAttribute`](https://developer.apple.com/documentation/applicationservices/kaxhorizontalunitdescriptionattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/horizontalUnitDescription``
 	struct HorizontalUnitDescription: AXAttributeKey {
-		public typealias Value = String
+		public typealias Output = String
 
 		public static var attributeKey: String { kAXHorizontalUnitDescriptionAttribute }
 
@@ -17,7 +20,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.HorizontalUnitDescription
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/HorizontalUnitDescription``.
+	/// The attribute key for
+	/// [`kAXHorizontalUnitDescriptionAttribute`](https://developer.apple.com/documentation/applicationservices/kaxhorizontalunitdescriptionattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/HorizontalUnitDescription``
 	static var horizontalUnitDescription: Self {
 		Self()
 	}

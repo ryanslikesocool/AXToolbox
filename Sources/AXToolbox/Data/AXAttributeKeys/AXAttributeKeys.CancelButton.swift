@@ -4,8 +4,11 @@ import class ApplicationServices.HIServices.AXUIElement
 public extension AXAttributeKeys {
 	/// The attribute key for
 	/// [`kAXCancelButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxcancelbuttonattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeObject/cancelButton``
 	struct CancelButton: AXAttributeKey {
-		public typealias Value = AXUIElement
+		public typealias Output = AXUIElement
 
 		public static var attributeKey: String { kAXCancelButtonAttribute }
 
@@ -18,7 +21,11 @@ public extension AXAttributeKeys {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.CancelButton
 {
-	/// The shorthand attribute key accessor for ``AXAttributeKeys/CancelButton``.
+	/// The attribute key for
+	/// [`kAXCancelButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxcancelbuttonattribute)\.
+	///
+	/// ## See Also
+	/// - ``AXAttributeKeys/CancelButton``
 	static var cancelButton: Self {
 		Self()
 	}
