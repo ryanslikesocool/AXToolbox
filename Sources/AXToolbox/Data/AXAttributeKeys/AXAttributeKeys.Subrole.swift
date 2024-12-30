@@ -1,7 +1,6 @@
 import let ApplicationServices.HIServices.AXAttributeConstants.kAXSubroleAttribute
 import class ApplicationServices.HIServices.AXUIElement
 import class CoreFoundation.CFString
-import DeclarativeCore
 
 public extension AXAttributeKeys {
 	/// The attribute key for

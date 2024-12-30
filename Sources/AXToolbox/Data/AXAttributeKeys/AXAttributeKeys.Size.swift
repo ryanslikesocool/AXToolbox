@@ -1,6 +1,5 @@
 import ApplicationServices.HIServices
 import struct CoreGraphics.CGPoint
-import DeclarativeCore
 
 public extension AXAttributeKeys {
 	/// The attribute key for

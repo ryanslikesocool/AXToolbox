@@ -1,5 +1,4 @@
 import class ApplicationServices.HIServices.AXUIElement
-import DeclarativeCore
 
 /// A key for accessing attribute values in an
 /// [`AXUIElement`](https://developer.apple.com/documentation/applicationservices/axuielement)\.

@@ -1,5 +1,4 @@
 import let ApplicationServices.HIServices.AXAttributeConstants.kAXSortDirectionAttribute
-import DeclarativeCore
 
 public extension AXAttributeKeys {
 	/// The attribute key for

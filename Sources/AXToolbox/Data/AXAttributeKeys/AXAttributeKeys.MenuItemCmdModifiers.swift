@@ -1,6 +1,5 @@
 import struct ApplicationServices.HIServices.AXAttributeConstants.AXMenuItemModifiers
 import let ApplicationServices.HIServices.AXAttributeConstants.kAXMenuItemCmdModifiersAttribute
-import DeclarativeCore
 
 public extension AXAttributeKeys {
 	/// The attribute key for

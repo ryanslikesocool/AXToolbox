@@ -74,7 +74,7 @@ public extension AXUIElement {
 //	/// in the corresponding position.
 //	/// If `options.contains(.stopOnError)`, this function will return immediately when it gets an error.
 //	func values(forAttributes attributeKeys: [any AXAttributeKey.Type], options: AXCopyMultipleAttributeOptions = []) throws -> [AXValue] {
-//		// TODO: This should `.process` the result for each `attributeKeys`.
+//		// TODO: Handle each `attributeKey.process(_:)`.
 //		try values(forAttributes: attributeKeys.map { attributeKey in attributeKey.attributeKey }, options: options)
 //	}
 }

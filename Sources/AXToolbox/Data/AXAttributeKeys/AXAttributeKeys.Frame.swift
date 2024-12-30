@@ -2,7 +2,6 @@ import ApplicationServices.HIServices
 import struct CoreGraphics.CGPoint
 import struct CoreGraphics.CGRect
 import struct CoreGraphics.CGSize
-import DeclarativeCore
 
 public extension AXAttributeKeys {
 	/// An attribute key that combines the output of ``AXAttributeKeys/Position`` and ``AXAttributeKeys/Size``.
