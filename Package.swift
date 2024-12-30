@@ -15,7 +15,7 @@ let package = Package(
 		),
 	],
 	dependencies: [
-		.package(url: "https://github.com/ryanslikesocool/DeclarativeCore.git", from: "0.0.4"),
+		.package(url: "https://github.com/ryanslikesocool/DeclarativeCore.git", from: "0.0.3"),
 	],
 	targets: [
 		.target(
