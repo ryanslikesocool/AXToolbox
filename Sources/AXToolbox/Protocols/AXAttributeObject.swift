@@ -1,12 +1,12 @@
 import DeclarativeCore
 
 public protocol AXAttributeObject<Input, Output>: ObjectProcessor {
-	// Shadows `ObjectProcessor.Input`
 	/// The type of the argument for ``process(_:)``.
+	// Shadows `ObjectProcessor.Input`
 	associatedtype Input
 
-	// Shadows `ObjectProcessor.Output`
 	/// The type of the value returned by ``process(_:)``.
+	// Shadows `ObjectProcessor.Output`
 	associatedtype Output
 
 	// Shadows `ObjectProcessor.process(_:)`
@@ -17,6 +17,7 @@ public protocol AXAttributeObject<Input, Output>: ObjectProcessor {
 
 public extension AXAttributeObject {
 	/// Apply the given `modifier` to the attribute.
+	/// 
 	/// - Parameter modifier: The modifier to apply to the attribute.
 	/// - Returns: The attribute with the given `modifier` applied.
 	func modifier<Modifier>(
@@ -31,6 +32,7 @@ public extension AXAttributeObject {
 
 // MARK: - Default Conformances
 
+extension AnyObjectProcessor: AXAttributeObject { }
 extension ObjectProcessorModifiers.Map: AXAttributeObject { }
 extension ObjectProcessorModifiers.CompactMap: AXAttributeObject { }
 extension ObjectProcessorModifiers.FlatMap: AXAttributeObject { }

@@ -10,12 +10,15 @@ public protocol AXAttributeKey: AXAttributeObject where
 	/// Attribute key constants can be found in
 	/// [`AXAttributeConstants.h`](https://developer.apple.com/documentation/applicationservices/axattributeconstants_h)\.
 	static var attributeKey: String { get }
+
+	/// Retrieve and process the value for the attribute with the ``attributeKey``.
+	// Shadows ``AXAttributeObject.process(_:)``
+	func process(_ input: Input) throws -> Output
 }
 
 // MARK: - Default Implementation
 
 public extension AXAttributeKey {
-	/// Retrieve and process the value for the attribute with the ``attributeKey``.
 	func process(_ input: Input) throws -> Output {
 		let originalValue = try input.value(forAttribute: Self.attributeKey)
 		guard let castValue = originalValue as? Output else {

@@ -28,7 +28,7 @@ extension AXSortDirection: RawRepresentable {
 	public init(rawValue: RawValue) {
 		// TODO: Optimize
 		// - Is the Swift compiler already smart enough to optimize this away?
-		// - Should we store this as a `static let initializerLookupTable: [String : Self]`?
+		// - Should we store this as a `static let initializerLookupTable: [RawValue : Self]`?
 		// - Should `switch` cases be `case Self.<case>.rawValue:` for safety?
 
 		self = switch rawValue {
@@ -42,7 +42,7 @@ extension AXSortDirection: RawRepresentable {
 	public var rawValue: RawValue {
 		// TODO: Optimize
 		// - Is the Swift compiler already smart enough to optimize this away?
-		// - Should we store this as a `static let rawValueLookupTable: [Self : String]`?
+		// - Should we store this as a `static let rawValueLookupTable: [Self : RawValue]`?
 
 		switch self {
 			case .ascending: kAXAscendingSortDirectionValue
@@ -66,6 +66,7 @@ extension AXSortDirection: Hashable { }
 
 // MARK: - Codable
 
+// VALIDATE: Do we need to manually implement `Codable`?
 extension AXSortDirection: Codable {
 	public init(from decoder: any Decoder) throws {
 		let container = try decoder.singleValueContainer()

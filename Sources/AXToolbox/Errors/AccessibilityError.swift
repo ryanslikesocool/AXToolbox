@@ -43,7 +43,7 @@ public extension AccessibilityError {
 		Self(rawValue: .castFailed(input: input, output: output))!
 	}
 
-	static func castFailed<Input>(from _: borrowing Input, to output: Any.Type) -> Self {
+	static func castFailed<Input>(from inputValue: borrowing Input, to output: Any.Type) -> Self {
 		castFailed(from: Input.self, to: output)
 	}
 
