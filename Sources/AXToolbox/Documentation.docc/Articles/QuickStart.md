@@ -3,7 +3,7 @@
 ## Using Attribute Keys
 
 This package provides a simple and type-safe way to access attribute values from
-[`AXUIElement`](https://developer.apple.com/documentation/applicationservices/axuielement)
+[`AXUIElement`]( https://developer.apple.com/documentation/applicationservices/axuielement )
 in the form of the ``AXAttributeKey`` protocol.
 ```swift
 import ApplicationServices

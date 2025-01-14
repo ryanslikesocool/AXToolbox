@@ -1,7 +1,7 @@
 import ApplicationServices
 
 // Extensions for `AXValue` that use
-// [`AXValueGetValue`](https://developer.apple.com/documentation/applicationservices/1462933-axvaluegetvalue)\.
+// [`AXValueGetValue`]( https://developer.apple.com/documentation/applicationservices/1462933-axvaluegetvalue ).
 public extension AXValue {
 	/// Decodes the stored structure and copies it into `valuePtr`.
 	///
@@ -12,7 +12,10 @@ public extension AXValue {
 	///   - valuePtr:
 	/// - Returns: `true` if the stored structure was successfully decoded into `valuePtr`; `false` otherwise.
 	@discardableResult
-	func value(ofType axValueType: AXValueType, _ valuePtr: UnsafeMutableRawPointer) -> Bool {
+	func value(
+		ofType axValueType: AXValueType,
+		_ valuePtr: UnsafeMutableRawPointer
+	) -> Bool {
 		AXValueGetValue(self, axValueType, valuePtr)
 	}
 
@@ -20,7 +23,9 @@ public extension AXValue {
 	///
 	/// - Parameter valueType: The type of stored value.
 	/// - Returns: The stored value decoded as `valueType`.
-	func value<Value>(ofType valueType: Value.Type) throws -> Value {
+	func value<Value>(
+		ofType valueType: Value.Type
+	) throws -> Value {
 		let axValueType = AXValueType(valueType)
 		guard axValueType != .illegal else {
 			throw AccessibilityError.illegalType(valueType)

@@ -2,7 +2,9 @@ import ApplicationServices
 import CoreGraphics
 
 public extension AXValueType {
-	init<Value>(_ type: Value.Type) {
+	init<Value>(
+		_ type: Value.Type
+	) {
 		self = switch type {
 			case is CGPoint.Type: .cgPoint
 			case is CGSize.Type: .cgSize

@@ -3,14 +3,17 @@ import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXFullScreenButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxfullscreenbuttonattribute)\.
+	/// [`kAXFullScreenButtonAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxfullscreenbuttonattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/fullScreenButton``
 	struct FullScreenButton: AXAttributeKey {
 		public typealias Output = AXUIElement
 
-		public static var attributeKey: String { kAXFullScreenButtonAttribute }
+		public static var attributeKey: String {
+			kAXFullScreenButtonAttribute
+		}
 
 		public init() { }
 	}
@@ -22,7 +25,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.FullScreenButton
 {
 	/// The attribute key for
-	/// [`kAXFullScreenButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxfullscreenbuttonattribute)\.
+	/// [`kAXFullScreenButtonAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxfullscreenbuttonattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/FullScreenButton``

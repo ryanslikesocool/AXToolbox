@@ -4,14 +4,17 @@ import class CoreFoundation.CFString
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXRoleAttribute`](https://developer.apple.com/documentation/applicationservices/kaxroleattribute)\.
+	/// [`kAXRoleAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxroleattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/role``
 	struct Role: AXAttributeKey {
 		public typealias Output = AXRole
 
-		public static var attributeKey: String { kAXRoleAttribute }
+		public static var attributeKey: String {
+			kAXRoleAttribute
+		}
 
 		public init() { }
 
@@ -33,7 +36,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.Role
 {
 	/// The attribute key for
-	/// [`kAXRoleAttribute`](https://developer.apple.com/documentation/applicationservices/kaxroleattribute)\.
+	/// [`kAXRoleAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxroleattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/Role``

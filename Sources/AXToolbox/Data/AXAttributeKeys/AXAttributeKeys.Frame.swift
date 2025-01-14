@@ -4,19 +4,15 @@ import struct CoreGraphics.CGRect
 import struct CoreGraphics.CGSize
 
 public extension AXAttributeKeys {
-	/// An attribute key that combines the output of ``AXAttributeKeys/Position`` and ``AXAttributeKeys/Size``.
+	/// An attribute object that combines the output of ``AXAttributeKeys/Position`` and ``AXAttributeKeys/Size`` into a
+	/// [`CGRect`]( https://developer.apple.com/documentation/corefoundation/cgrect ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/frame``
-	struct Frame: AXAttributeKey {
+	struct Frame: AXAttributeObject {
+		public typealias Input = AXUIElement
 		public typealias Output = CGRect
-
-		public static var attributeKey: String {
-			fatalError("""
-			\(Self.self) does not have an attribute key.
-			This property should never be accessed.
-			""")
-		}
 
 		public init() { }
 
@@ -59,7 +55,8 @@ private extension AXAttributeKeys.Frame {
 public extension AXAttributeObject where
 	Self == AXAttributeKeys.Frame
 {
-	/// An attribute key that combines the output of ``AXAttributeKeys/Position`` and ``AXAttributeKeys/Size``.
+	/// An attribute key that combines the output of ``AXAttributeKeys/Position`` and ``AXAttributeKeys/Size`` into a
+	/// [`CGRect`]( https://developer.apple.com/documentation/corefoundation/cgrect ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/Frame``

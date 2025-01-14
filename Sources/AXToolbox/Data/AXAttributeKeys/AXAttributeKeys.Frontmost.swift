@@ -2,14 +2,17 @@ import let ApplicationServices.HIServices.AXAttributeConstants.kAXFrontmostAttri
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXFrontmostAttribute`](https://developer.apple.com/documentation/applicationservices/kaxfrontmostattribute)\.
+	/// [`kAXFrontmostAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxfrontmostattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/frontmost``
 	struct Frontmost: AXAttributeKey {
 		public typealias Output = Bool
 
-		public static var attributeKey: String { kAXFrontmostAttribute }
+		public static var attributeKey: String {
+			kAXFrontmostAttribute
+		}
 
 		public init() { }
 	}
@@ -21,7 +24,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.Frontmost
 {
 	/// The attribute key for
-	/// [`kAXFrontmostAttribute`](https://developer.apple.com/documentation/applicationservices/kaxfrontmostattribute)\.
+	/// [`kAXFrontmostAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxfrontmostattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/Frontmost``

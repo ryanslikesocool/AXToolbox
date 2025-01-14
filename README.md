@@ -15,7 +15,7 @@ Breaking changes are common, documentation is incomplete, and support is limited
 
 Add the following entry to your package dependencies...
 ```swift
-.package(url: "https://github.com/ryanslikesocool/AXToolbox.git", from: "0.0.5"),
+.package(url: "https://github.com/ryanslikesocool/AXToolbox.git", from: "0.0.6"),
 ```
 ...and your target dependencies.
 ```swift

@@ -2,14 +2,17 @@ import let ApplicationServices.HIServices.AXAttributeConstants.kAXOrientationAtt
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXOrientationAttribute`](https://developer.apple.com/documentation/applicationservices/kaxorientationattribute)\.
+	/// [`kAXOrientationAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxorientationattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/orientation``
 	struct Orientation: AXAttributeKey {
 		public typealias Output = AXOrientation
 
-		public static var attributeKey: String { kAXOrientationAttribute }
+		public static var attributeKey: String {
+			kAXOrientationAttribute
+		}
 
 		public init() { }
 
@@ -31,7 +34,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.Orientation
 {
 	/// The attribute key for
-	/// [`kAXOrientationAttribute`](https://developer.apple.com/documentation/applicationservices/kaxorientationattribute)\.
+	/// [`kAXOrientationAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxorientationattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/Orientation``

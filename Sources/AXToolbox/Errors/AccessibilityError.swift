@@ -4,7 +4,9 @@ import enum ApplicationServices.HIServices.AXValueType
 public struct AccessibilityError {
 	private let rawValue: RawValue
 
-	private init?(rawValue: RawValue) {
+	private init?(
+		rawValue: RawValue
+	) {
 		switch rawValue {
 			case let .axError(axError):
 				guard axError != .success else {
@@ -30,32 +32,57 @@ extension AccessibilityError: Error { }
 
 public extension AccessibilityError {
 	/// Create an accessibility error by wrapping an
-	/// [`AXError`](https://developer.apple.com/documentation/applicationservices/axerror)\.
+	/// [`AXError`]( https://developer.apple.com/documentation/applicationservices/axerror ).
 	///
-	/// - Remark: If the provided argument is
-	/// [`success`](https://developer.apple.com/documentation/applicationservices/axerror/success)\,
-	/// this function will return `nil`.
-	static func axError(_ axError: AXError) -> Self? {
+	/// - Parameter axError: The
+	/// [`AXError`]( https://developer.apple.com/documentation/applicationservices/axerror )
+	/// to convert.
+	/// - Returns: An accessibility error wrapping the given `axError`; or `nil` if the given `axError` was a
+	/// [`success`]( https://developer.apple.com/documentation/applicationservices/axerror/success ).
+	static func axError(
+		_ axError: AXError
+	) -> Self? {
 		Self(rawValue: .axError(axError))
 	}
 
-	static func castFailed(from input: Any.Type, to output: Any.Type) -> Self {
-		Self(rawValue: .castFailed(input: input, output: output))!
+	/// - Parameters:
+	///   - inputType: The input type of the cast.
+	///   - outputType: The output type of the cast.
+	static func castFailed(
+		from inputType: Any.Type,
+		to outputType: Any.Type
+	) -> Self {
+		Self(rawValue: .castFailed(input: inputType, output: outputType))!
 	}
 
-	static func castFailed<Input>(from inputValue: borrowing Input, to output: Any.Type) -> Self {
-		castFailed(from: Input.self, to: output)
+	/// - Parameters:
+	///   - inputValue: The input value of the cast.
+	///   - outputType: The output type of the cast.
+	static func castFailed<Input>(
+		from inputValue: borrowing Input,
+		to outputType: Any.Type
+	) -> Self {
+		castFailed(from: Input.self, to: outputType)
 	}
 
-	static func illegalType(_ valueType: Any.Type) -> Self {
+	/// - Parameter valueType:
+	static func illegalType(
+		_ valueType: Any.Type
+	) -> Self {
 		Self(rawValue: .illegalType(valueType))!
 	}
 
-	static func invalidDefaultValue(_ valueType: Any.Type) -> Self {
+	/// - Parameter valueType:
+	static func invalidDefaultValue(
+		_ valueType: Any.Type
+	) -> Self {
 		Self(rawValue: .invalidDefaultValue(valueType))!
 	}
 
-	static func decodingFailed(_ valueType: AXValueType) -> Self {
+	/// - Parameter valueType:
+	static func decodingFailed(
+		_ valueType: AXValueType
+	) -> Self {
 		Self(rawValue: .decodingFailed(valueType))!
 	}
 }
@@ -64,8 +91,14 @@ public extension AccessibilityError {
 
 public extension AccessibilityError {
 	/// Throw if the given `axError` is not
-	/// [`success`](https://developer.apple.com/documentation/applicationservices/axerror/success)\,
-	static func testAXError(_ axError: AXError) throws {
+	/// [`success`]( https://developer.apple.com/documentation/applicationservices/axerror/success ).
+	///
+	/// - Parameter axError: The
+	/// [`AXError`]( https://developer.apple.com/documentation/applicationservices/axerror )
+	/// to test.
+	static func testAXError(
+		_ axError: AXError
+	) throws {
 		guard let error = Self.axError(axError) else {
 			return
 		}

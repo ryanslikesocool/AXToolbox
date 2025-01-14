@@ -2,14 +2,17 @@ import let ApplicationServices.HIServices.AXAttributeConstants.kAXVerticalUnitDe
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXVerticalUnitDescriptionAttribute`](https://developer.apple.com/documentation/applicationservices/kaxverticalunitdescriptionattribute)\.
+	/// [`kAXVerticalUnitDescriptionAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxverticalunitdescriptionattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/verticalUnitDescription``
 	struct VerticalUnitDescription: AXAttributeKey {
 		public typealias Output = String
 
-		public static var attributeKey: String { kAXVerticalUnitDescriptionAttribute }
+		public static var attributeKey: String {
+			kAXVerticalUnitDescriptionAttribute
+		}
 
 		public init() { }
 	}
@@ -21,7 +24,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.VerticalUnitDescription
 {
 	/// The attribute key for
-	/// [`kAXVerticalUnitDescriptionAttribute`](https://developer.apple.com/documentation/applicationservices/kaxverticalunitdescriptionattribute)\.
+	/// [`kAXVerticalUnitDescriptionAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxverticalunitdescriptionattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/VerticalUnitDescription``

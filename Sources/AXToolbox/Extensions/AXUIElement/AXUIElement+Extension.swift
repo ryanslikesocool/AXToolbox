@@ -7,12 +7,16 @@ public extension AXUIElement {
 	// The functionality provided in implementations of `AXAttributeObject`
 	// should cover most, if not all, cases.
 
-	func subelements(forAttribute attributeName: CFString) throws -> CFArray {
+	func subelements(
+		forAttribute attributeName: CFString
+	) throws -> CFArray {
 		let count = try valueCount(forAttribute: attributeName)
 		return try values(forAttribute: attributeName, startIndex: 0, maxValues: count)
 	}
 
-	func subelements(forAttribute attributeName: String) throws -> CFArray {
+	func subelements(
+		forAttribute attributeName: String
+	) throws -> CFArray {
 		try subelements(forAttribute: attributeName as CFString)
 	}
 

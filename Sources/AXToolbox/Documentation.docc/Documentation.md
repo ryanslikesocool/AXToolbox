@@ -9,16 +9,12 @@ Extensions and conveniences for macOS accessibility APIs.
 - <doc:AttributeKeys>
 - <doc:AttributeModifiers>
 
-
 ### Constants
-
 - ``AXAction``
 - ``AXOrientation``
 - ``AXRole``
 - ``AXSortDirection``
 - ``AXSubrole``
 
-
 ### Errors
-
 - ``AccessibilityError``

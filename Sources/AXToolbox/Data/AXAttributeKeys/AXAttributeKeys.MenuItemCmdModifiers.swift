@@ -3,14 +3,17 @@ import let ApplicationServices.HIServices.AXAttributeConstants.kAXMenuItemCmdMod
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXMenuItemCmdModifiersAttribute`](https://developer.apple.com/documentation/applicationservices/kaxmenuitemcmdmodifiersattribute)\.
+	/// [`kAXMenuItemCmdModifiersAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxmenuitemcmdmodifiersattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/menuItemCmdModifiers``
 	struct MenuItemCmdModifiers: AXAttributeKey {
 		public typealias Output = AXMenuItemModifiers
 
-		public static var attributeKey: String { kAXMenuItemCmdModifiersAttribute }
+		public static var attributeKey: String {
+			kAXMenuItemCmdModifiersAttribute
+		}
 
 		public init() { }
 
@@ -30,7 +33,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.MenuItemCmdModifiers
 {
 	/// The attribute key for
-	/// [`kAXMenuItemCmdModifiersAttribute`](https://developer.apple.com/documentation/applicationservices/kaxmenuitemcmdmodifiersattribute)\.
+	/// [`kAXMenuItemCmdModifiersAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxmenuitemcmdmodifiersattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/MenuItemCmdModifiers``

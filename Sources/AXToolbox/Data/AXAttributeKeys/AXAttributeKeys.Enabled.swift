@@ -2,14 +2,17 @@ import let ApplicationServices.HIServices.AXAttributeConstants.kAXEnabledAttribu
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXEnabledAttribute`](https://developer.apple.com/documentation/applicationservices/kaxenabledattribute)\.
+	/// [`kAXEnabledAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxenabledattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/enabled``
 	struct Enabled: AXAttributeKey {
 		public typealias Output = Bool
 
-		public static var attributeKey: String { kAXEnabledAttribute }
+		public static var attributeKey: String {
+			kAXEnabledAttribute
+		}
 
 		public init() { }
 	}
@@ -21,7 +24,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.Enabled
 {
 	/// The attribute key for
-	/// [`kAXEnabledAttribute`](https://developer.apple.com/documentation/applicationservices/kaxenabledattribute)\.
+	/// [`kAXEnabledAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxenabledattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/Enabled``

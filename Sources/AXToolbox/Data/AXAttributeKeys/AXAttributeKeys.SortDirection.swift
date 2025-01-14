@@ -2,14 +2,17 @@ import let ApplicationServices.HIServices.AXAttributeConstants.kAXSortDirectionA
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXSortDirectionAttribute`](https://developer.apple.com/documentation/applicationservices/kaxsortdirectionattribute)\.
+	/// [`kAXSortDirectionAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxsortdirectionattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/sortDirection``
 	struct SortDirection: AXAttributeKey {
 		public typealias Output = AXSortDirection
 
-		public static var attributeKey: String { kAXSortDirectionAttribute }
+		public static var attributeKey: String {
+			kAXSortDirectionAttribute
+		}
 
 		public init() { }
 
@@ -29,7 +32,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.SortDirection
 {
 	/// The attribute key for
-	/// [`kAXSortDirectionAttribute`](https://developer.apple.com/documentation/applicationservices/kaxsortdirectionattribute)\.
+	/// [`kAXSortDirectionAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxsortdirectionattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/SortDirection``

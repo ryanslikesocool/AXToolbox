@@ -2,14 +2,17 @@ import let ApplicationServices.HIServices.AXAttributeConstants.kAXDescriptionAtt
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXDescriptionAttribute`](https://developer.apple.com/documentation/applicationservices/kaxdescriptionattribute)\.
+	/// [`kAXDescriptionAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxdescriptionattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/description``
 	struct Description: AXAttributeKey {
 		public typealias Output = String
 
-		public static var attributeKey: String { kAXDescriptionAttribute }
+		public static var attributeKey: String {
+			kAXDescriptionAttribute
+		}
 
 		public init() { }
 	}
@@ -21,7 +24,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.Description
 {
 	/// The attribute key for
-	/// [`kAXDescriptionAttribute`](https://developer.apple.com/documentation/applicationservices/kaxdescriptionattribute)\.
+	/// [`kAXDescriptionAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxdescriptionattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/Description``

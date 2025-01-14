@@ -2,14 +2,17 @@ import let ApplicationServices.HIServices.AXAttributeConstants.kAXHiddenAttribut
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXHiddenAttribute`](https://developer.apple.com/documentation/applicationservices/kaxhiddenattribute)\.
+	/// [`kAXHiddenAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxhiddenattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/hidden``
 	struct Hidden: AXAttributeKey {
 		public typealias Output = Bool
 
-		public static var attributeKey: String { kAXHiddenAttribute }
+		public static var attributeKey: String {
+			kAXHiddenAttribute
+		}
 
 		public init() { }
 	}
@@ -21,7 +24,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.Hidden
 {
 	/// The attribute key for
-	/// [`kAXHiddenAttribute`](https://developer.apple.com/documentation/applicationservices/kaxhiddenattribute)\.
+	/// [`kAXHiddenAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxhiddenattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/Hidden``

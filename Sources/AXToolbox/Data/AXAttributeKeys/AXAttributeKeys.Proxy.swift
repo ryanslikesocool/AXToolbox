@@ -3,14 +3,17 @@ import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXProxyAttribute`](https://developer.apple.com/documentation/applicationservices/kaxproxyattribute)\.
+	/// [`kAXProxyAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxproxyattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/proxy``
 	struct Proxy: AXAttributeKey {
 		public typealias Output = AXUIElement
 
-		public static var attributeKey: String { kAXProxyAttribute }
+		public static var attributeKey: String {
+			kAXProxyAttribute
+		}
 
 		public init() { }
 	}
@@ -22,7 +25,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.Proxy
 {
 	/// The attribute key for
-	/// [`kAXProxyAttribute`](https://developer.apple.com/documentation/applicationservices/kaxproxyattribute)\.
+	/// [`kAXProxyAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxproxyattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/Proxy``

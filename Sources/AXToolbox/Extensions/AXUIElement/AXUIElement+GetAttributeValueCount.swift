@@ -1,13 +1,15 @@
 import ApplicationServices
 
 // Extensions for `AXUIElement` that use
-// [`AXUIElementGetAttributeValueCount`](https://developer.apple.com/documentation/applicationservices/1459066-axuielementgetattributevaluecoun)\.
+// [`AXUIElementGetAttributeValueCount`]( https://developer.apple.com/documentation/applicationservices/1459066-axuielementgetattributevaluecoun ).
 public extension AXUIElement {
 	/// Returns the count of the array of an accessibility object's attribute value.
 	///
 	/// - Parameter attributeName: The attribute name.
 	/// - Returns: The size of the array that is the attribute's value.
-	func valueCount(forAttribute attributeName: CFString) throws -> CFIndex {
+	func valueCount(
+		forAttribute attributeName: CFString
+	) throws -> CFIndex {
 		var count: CFIndex = 0
 		let resultCode = AXUIElementGetAttributeValueCount(self, attributeName, &count)
 
@@ -20,7 +22,9 @@ public extension AXUIElement {
 	///
 	/// - Parameter attributeName: The attribute name.
 	/// - Returns: The size of the array that is the attribute's value.
-	func valueCount(forAttribute attributeName: String) throws -> CFIndex {
+	func valueCount(
+		forAttribute attributeName: String
+	) throws -> CFIndex {
 		try valueCount(forAttribute: attributeName as CFString)
 	}
 
@@ -29,7 +33,8 @@ public extension AXUIElement {
 //	/// - Parameter attributeKey: The attribute key.
 //	/// - Returns: The size of the array that is the attribute's value.
 //	func valueCount<Key>(forAttribute attributeKey: Key) throws -> CFIndex where
-//		Key: AXAttributeKey,
+//		Key: AXAttributeObject,
+//		Key.Input == AXUIElement,
 //		Key.Output: Collection
 //	{
 //		// TODO: Handle `attributeKey.process(_:)`

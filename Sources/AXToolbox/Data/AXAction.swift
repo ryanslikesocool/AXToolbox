@@ -1,7 +1,9 @@
 import ApplicationServices.HIServices.AXActionConstants
 
+// TODO: Should this be converted to an `enum`?
+
 /// Constants for actions defined in
-/// [AXActionConstants.h](https://developer.apple.com/documentation/applicationservices/axactionconstants_h)\.
+/// [AXActionConstants.h]( https://developer.apple.com/documentation/applicationservices/axactionconstants_h ).
 @frozen
 public struct AXAction {
 	public typealias RawValue = String
@@ -41,11 +43,11 @@ extension AXAction: Codable {
 
 // MARK: - CustomStringConvertible
 
-extension AXAction: CustomStringConvertible {
-	public var description: String {
-		"\(Self.self)(\(rawValue))"
-	}
-}
+//extension AXAction: CustomStringConvertible {
+//	public var description: String {
+//		"\(Self.self)(\(rawValue))"
+//	}
+//}
 
 // MARK: - Constants
 
@@ -54,52 +56,52 @@ public extension AXAction {
 	// MARK: C
 
 	/// The constant for
-	/// [`kAXCancelAction`](https://developer.apple.com/documentation/applicationservices/kaxcancelaction)\.
+	/// [`kAXCancelAction`]( https://developer.apple.com/documentation/applicationservices/kaxcancelaction ).
 	static var cancel: Self { Self(rawValue: kAXCancelAction) }
 
 	/// The constant for
-	/// [`kAXConfirmAction`](https://developer.apple.com/documentation/applicationservices/kaxconfirmaction)\.
+	/// [`kAXConfirmAction`]( https://developer.apple.com/documentation/applicationservices/kaxconfirmaction ).
 	static var confirm: Self { Self(rawValue: kAXConfirmAction) }
 
 	// MARK: D
 
 	/// The constant for
-	/// [`kAXDecrementAction`](https://developer.apple.com/documentation/applicationservices/kaxdecrementaction)\.
+	/// [`kAXDecrementAction`]( https://developer.apple.com/documentation/applicationservices/kaxdecrementaction ).
 	static var decrement: Self { Self(rawValue: kAXDecrementAction) }
 
 	// MARK: I
 
 	/// The constant for
-	/// [`kAXIncrementAction`](https://developer.apple.com/documentation/applicationservices/kaxincrementaction)\.
+	/// [`kAXIncrementAction`]( https://developer.apple.com/documentation/applicationservices/kaxincrementaction ).
 	static var increment: Self { Self(rawValue: kAXIncrementAction) }
 
 	// MARK: P
 
 	/// The constant for
-	/// [`kAXPickAction`](https://developer.apple.com/documentation/applicationservices/kaxpickaction)\.
+	/// [`kAXPickAction`]( https://developer.apple.com/documentation/applicationservices/kaxpickaction ).
 	static var pick: Self { Self(rawValue: kAXPickAction) }
 
 	/// The constant for
-	/// [`kAXPressAction`](https://developer.apple.com/documentation/applicationservices/kaxpressaction)\.
+	/// [`kAXPressAction`]( https://developer.apple.com/documentation/applicationservices/kaxpressaction ).
 	static var press: Self { Self(rawValue: kAXPressAction) }
 
 	// MARK: R
 
 	/// The constant for
-	/// [`kAXRaiseAction`](https://developer.apple.com/documentation/applicationservices/kaxraiseaction)\.
+	/// [`kAXRaiseAction`]( https://developer.apple.com/documentation/applicationservices/kaxraiseaction ).
 	static var raise: Self { Self(rawValue: kAXRaiseAction) }
 
 	// MARK: S
 
 	/// The constant for
-	/// [`kAXShowAlternateUIAction`](https://developer.apple.com/documentation/applicationservices/kaxshowalternateuiaction)\.
+	/// [`kAXShowAlternateUIAction`]( https://developer.apple.com/documentation/applicationservices/kaxshowalternateuiaction ).
 	static var showAlternateUI: Self { Self(rawValue: kAXShowAlternateUIAction) }
 
 	/// The constant for
-	/// [`kAXShowDefaultUIAction`](https://developer.apple.com/documentation/applicationservices/kaxshowdefaultuiaction)\.
+	/// [`kAXShowDefaultUIAction`]( https://developer.apple.com/documentation/applicationservices/kaxshowdefaultuiaction ).
 	static var showDefaultUI: Self { Self(rawValue: kAXShowDefaultUIAction) }
 
 	/// The constant for
-	/// [`kAXShowMenuAction`](https://developer.apple.com/documentation/applicationservices/kaxshowmenuaction)\.
+	/// [`kAXShowMenuAction`]( https://developer.apple.com/documentation/applicationservices/kaxshowmenuaction ).
 	static var showMenu: Self { Self(rawValue: kAXShowMenuAction) }
 }

@@ -8,16 +8,12 @@
 - ``ApplicationServices/AXUIElement/value(forAttribute:)-266rr``
 - ``ApplicationServices/AXUIElement/value(forAttribute:)-798w7``
 
-
 ### Declaring Keys
-
 - ``AXAttributeKey``
 - <doc:ShorthandAttributeKeyAccessors>
 - <doc:CustomAttributeKeyProcessing>
 
-
 ### Keys
-
 - ``AXAttributeKeys``
 - ``AXAttributeObject/cancelButton``
 - ``AXAttributeObject/children``
