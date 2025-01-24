@@ -11,9 +11,9 @@ In some circumstances, additional processing may be desired for an attribute key
 ## Example
 
 This example converts the attribute value for the key
-[`kAXRoleAttribute`](https://developer.apple.com/documentation/applicationservices/kaxorientationattribute)
+[`kAXRoleAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxorientationattribute )
 to an
-``AXRole``
+[`NSAccessibility.Role`]( https://developer.apple.com/documentation/appkit/nsaccessibility-swift.struct/role )
 by declaring a custom implementation for
 ``AXAttributeKey/process(_:)``.
 ```swift
