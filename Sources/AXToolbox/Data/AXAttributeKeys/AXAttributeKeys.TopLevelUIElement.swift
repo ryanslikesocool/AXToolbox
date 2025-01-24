@@ -3,14 +3,17 @@ import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXTopLevelUIElementAttribute`](https://developer.apple.com/documentation/applicationservices/kaxtopleveluielementattribute)\.
+	/// [`kAXTopLevelUIElementAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxtopleveluielementattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/topLevelUIElement``
 	struct TopLevelUIElement: AXAttributeKey {
 		public typealias Output = AXUIElement
 
-		public static var attributeKey: String { kAXTopLevelUIElementAttribute }
+		public static var attributeKey: String {
+			kAXTopLevelUIElementAttribute
+		}
 
 		public init() { }
 	}
@@ -22,7 +25,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.TopLevelUIElement
 {
 	/// The attribute key for
-	/// [`kAXTopLevelUIElementAttribute`](https://developer.apple.com/documentation/applicationservices/kaxtopleveluielementattribute)\.
+	/// [`kAXTopLevelUIElementAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxtopleveluielementattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/TopLevelUIElement``

@@ -2,14 +2,17 @@ import let ApplicationServices.HIServices.AXAttributeConstants.kAXHorizontalUnit
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXHorizontalUnitDescriptionAttribute`](https://developer.apple.com/documentation/applicationservices/kaxhorizontalunitdescriptionattribute)\.
+	/// [`kAXHorizontalUnitDescriptionAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxhorizontalunitdescriptionattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/horizontalUnitDescription``
 	struct HorizontalUnitDescription: AXAttributeKey {
 		public typealias Output = String
 
-		public static var attributeKey: String { kAXHorizontalUnitDescriptionAttribute }
+		public static var attributeKey: String {
+			kAXHorizontalUnitDescriptionAttribute
+		}
 
 		public init() { }
 	}
@@ -21,7 +24,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.HorizontalUnitDescription
 {
 	/// The attribute key for
-	/// [`kAXHorizontalUnitDescriptionAttribute`](https://developer.apple.com/documentation/applicationservices/kaxhorizontalunitdescriptionattribute)\.
+	/// [`kAXHorizontalUnitDescriptionAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxhorizontalunitdescriptionattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/HorizontalUnitDescription``

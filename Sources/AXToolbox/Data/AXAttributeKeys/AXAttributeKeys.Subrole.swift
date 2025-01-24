@@ -1,17 +1,18 @@
-import let ApplicationServices.HIServices.AXAttributeConstants.kAXSubroleAttribute
-import class ApplicationServices.HIServices.AXUIElement
-import class CoreFoundation.CFString
+import AppKit
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXSubroleAttribute`](https://developer.apple.com/documentation/applicationservices/kaxsubroleattribute)\.
+	/// [`kAXSubroleAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxsubroleattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/subrole``
 	struct Subrole: AXAttributeKey {
-		public typealias Output = AXSubrole
+		public typealias Output = NSAccessibility.Subrole
 
-		public static var attributeKey: String { kAXSubroleAttribute }
+		public static var attributeKey: String {
+			kAXSubroleAttribute
+		}
 
 		public init() { }
 
@@ -33,7 +34,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.Subrole
 {
 	/// The attribute key for
-	/// [`kAXSubroleAttribute`](https://developer.apple.com/documentation/applicationservices/kaxsubroleattribute)\.
+	/// [`kAXSubroleAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxsubroleattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/Subrole``

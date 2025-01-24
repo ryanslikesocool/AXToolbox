@@ -3,14 +3,17 @@ import struct CoreGraphics.CGPoint
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXPositionAttribute`](https://developer.apple.com/documentation/applicationservices/kaxpositionattribute)\.
+	/// [`kAXPositionAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxpositionattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/position``
 	struct Position: AXAttributeKey {
 		public typealias Output = CGPoint
 
-		public static var attributeKey: String { kAXPositionAttribute }
+		public static var attributeKey: String {
+			kAXPositionAttribute
+		}
 
 		public init() { }
 
@@ -30,7 +33,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.Position
 {
 	/// The attribute key for
-	/// [`kAXPositionAttribute`](https://developer.apple.com/documentation/applicationservices/kaxpositionattribute)\.
+	/// [`kAXPositionAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxpositionattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/Position``

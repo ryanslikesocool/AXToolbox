@@ -2,14 +2,17 @@ import let ApplicationServices.HIServices.AXAttributeConstants.kAXMainAttribute
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXMainAttribute`](https://developer.apple.com/documentation/applicationservices/kaxmainattribute)\.
+	/// [`kAXMainAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxmainattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/main``
 	struct Main: AXAttributeKey {
 		public typealias Output = Bool
 
-		public static var attributeKey: String { kAXMainAttribute }
+		public static var attributeKey: String {
+			kAXMainAttribute
+		}
 
 		public init() { }
 	}
@@ -21,7 +24,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.Main
 {
 	/// The attribute key for
-	/// [`kAXMainAttribute`](https://developer.apple.com/documentation/applicationservices/kaxmainattribute)\.
+	/// [`kAXMainAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxmainattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/Main``

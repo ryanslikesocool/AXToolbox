@@ -3,14 +3,17 @@ import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXVisibleChildrenAttribute`](https://developer.apple.com/documentation/applicationservices/kaxvisiblechildrenattribute)\.
+	/// [`kAXVisibleChildrenAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxvisiblechildrenattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/visibleChildren``
 	struct VisibleChildren: AXAttributeKey {
 		public typealias Output = [AXUIElement]
 
-		public static var attributeKey: String { kAXVisibleChildrenAttribute }
+		public static var attributeKey: String {
+			kAXVisibleChildrenAttribute
+		}
 
 		public init() { }
 	}
@@ -22,7 +25,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.VisibleChildren
 {
 	/// The attribute key for
-	/// [`kAXVisibleChildrenAttribute`](https://developer.apple.com/documentation/applicationservices/kaxvisiblechildrenattribute)\.
+	/// [`kAXVisibleChildrenAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxvisiblechildrenattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/VisibleChildren``

@@ -1,5 +1,9 @@
 import DeclarativeCore
 
+/// ## Topics
+/// ### Type-erased Objects
+/// - ``AnyAXAttributeObject``
+/// - ``PartialAXAttributeObject``
 public protocol AXAttributeObject<Input, Output>: ObjectProcessor {
 	/// The type of the argument for ``process(_:)``.
 	// Shadows `ObjectProcessor.Input`

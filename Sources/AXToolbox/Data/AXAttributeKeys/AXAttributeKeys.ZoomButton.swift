@@ -3,14 +3,17 @@ import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXZoomButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxzoombuttonattribute)\.
+	/// [`kAXZoomButtonAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxzoombuttonattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/zoomButton``
 	struct ZoomButton: AXAttributeKey {
 		public typealias Output = AXUIElement
 
-		public static var attributeKey: String { kAXZoomButtonAttribute }
+		public static var attributeKey: String {
+			kAXZoomButtonAttribute
+		}
 
 		public init() { }
 	}
@@ -22,7 +25,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.ZoomButton
 {
 	/// The attribute key for
-	/// [`kAXZoomButtonAttribute`](https://developer.apple.com/documentation/applicationservices/kaxzoombuttonattribute)\.
+	/// [`kAXZoomButtonAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxzoombuttonattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/ZoomButton``

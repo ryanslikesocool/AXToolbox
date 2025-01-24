@@ -3,14 +3,17 @@ import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXTitleUIElementAttribute`](https://developer.apple.com/documentation/applicationservices/kaxtitleuielementattribute)\.
+	/// [`kAXTitleUIElementAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxtitleuielementattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/titleUIElement``
 	struct TitleUIElement: AXAttributeKey {
 		public typealias Output = AXUIElement
 
-		public static var attributeKey: String { kAXTitleUIElementAttribute }
+		public static var attributeKey: String {
+			kAXTitleUIElementAttribute
+		}
 
 		public init() { }
 	}
@@ -22,7 +25,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.TitleUIElement
 {
 	/// The attribute key for
-	/// [`kAXTitleUIElementAttribute`](https://developer.apple.com/documentation/applicationservices/kaxtitleuielementattribute)\.
+	/// [`kAXTitleUIElementAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxtitleuielementattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/TitleUIElement``

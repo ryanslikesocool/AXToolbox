@@ -3,14 +3,17 @@ import class ApplicationServices.HIServices.AXUIElement
 
 public extension AXAttributeKeys {
 	/// The attribute key for
-	/// [`kAXMainWindowAttribute`](https://developer.apple.com/documentation/applicationservices/kaxmainwindowattribute)\.
+	/// [`kAXMainWindowAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxmainwindowattribute ).
 	///
-	/// ## See Also
+	/// ## Topics
+	/// ### Convenience
 	/// - ``AXAttributeObject/mainWindow``
 	struct MainWindow: AXAttributeKey {
 		public typealias Output = AXUIElement
 
-		public static var attributeKey: String { kAXMainWindowAttribute }
+		public static var attributeKey: String {
+			kAXMainWindowAttribute
+		}
 
 		public init() { }
 	}
@@ -22,7 +25,7 @@ public extension AXAttributeObject where
 	Self == AXAttributeKeys.MainWindow
 {
 	/// The attribute key for
-	/// [`kAXMainWindowAttribute`](https://developer.apple.com/documentation/applicationservices/kaxmainwindowattribute)\.
+	/// [`kAXMainWindowAttribute`]( https://developer.apple.com/documentation/applicationservices/kaxmainwindowattribute ).
 	///
 	/// ## See Also
 	/// - ``AXAttributeKeys/MainWindow``
