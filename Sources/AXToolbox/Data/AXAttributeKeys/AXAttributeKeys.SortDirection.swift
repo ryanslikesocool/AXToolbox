@@ -1,4 +1,4 @@
-import let ApplicationServices.HIServices.AXAttributeConstants.kAXSortDirectionAttribute
+import AppKit
 
 public extension AXAttributeKeys {
 	/// The attribute key for
@@ -8,7 +8,7 @@ public extension AXAttributeKeys {
 	/// ### Convenience
 	/// - ``AXAttributeObject/sortDirection``
 	struct SortDirection: AXAttributeKey {
-		public typealias Output = AXSortDirection
+		public typealias Output = NSAccessibility.SortDirectionValue
 
 		public static var attributeKey: String {
 			kAXSortDirectionAttribute

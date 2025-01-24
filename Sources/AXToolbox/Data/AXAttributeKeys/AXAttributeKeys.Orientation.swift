@@ -1,4 +1,4 @@
-import let ApplicationServices.HIServices.AXAttributeConstants.kAXOrientationAttribute
+import AppKit
 
 public extension AXAttributeKeys {
 	/// The attribute key for
@@ -8,7 +8,7 @@ public extension AXAttributeKeys {
 	/// ### Convenience
 	/// - ``AXAttributeObject/orientation``
 	struct Orientation: AXAttributeKey {
-		public typealias Output = AXOrientation
+		public typealias Output = NSAccessibility.OrientationValue
 
 		public static var attributeKey: String {
 			kAXOrientationAttribute

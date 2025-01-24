@@ -1,6 +1,4 @@
-import let ApplicationServices.HIServices.AXAttributeConstants.kAXRoleAttribute
-import class ApplicationServices.HIServices.AXUIElement
-import class CoreFoundation.CFString
+import AppKit
 
 public extension AXAttributeKeys {
 	/// The attribute key for
@@ -10,7 +8,7 @@ public extension AXAttributeKeys {
 	/// ### Convenience
 	/// - ``AXAttributeObject/role``
 	struct Role: AXAttributeKey {
-		public typealias Output = AXRole
+		public typealias Output = NSAccessibility.Role
 
 		public static var attributeKey: String {
 			kAXRoleAttribute
